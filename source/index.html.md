@@ -1,15 +1,12 @@
 ---
-title: API Reference
+title: Abuse Prevention Systems API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -19,221 +16,390 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the MinistrySafe and Abuse Prevention Systems API! You can use our API to assign and manage trainings, and deliver our content and quizzes in your own system.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'net/http'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
 
-```python
-import kittn
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
 
-api = kittn.authorize('meowmeowmeow')
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: Token token=myapitoken"
 ```
 
-```javascript
-const kittn = require('kittn');
+> Make sure to replace `myapitoken` with your API key.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+The API uses token authentication. We expect the API key to be included in all API requests to the server in a header that looks like the following:
 
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`"Authorization" => "Token token=myapitoken"`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>myapitoken</code> with your actual API key.
 </aside>
 
-# Kittens
+# Users
 
-## Get All Kittens
+## Get All Users
 
 ```ruby
-require 'kittn'
+require 'net/http'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
+
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
+
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
 api.kittens.get
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
+  -H "Authorization: Token token=myapitoken"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+  [
+    {
+      "employee_id": "111",
+      "first_name": "Test",
+      "last_name": "User",
+      "score": 80,
+      "complete_date": "2016-08-17T17:07:07.292Z",
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+    },
+    {
+      "employee_id":"123",
+      "first_name": "John",
+      "last_name": "Doe",
+      "score": 100,
+      "complete_date": "2016-08-03T01:59:32.622Z",
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
+    }
+  ]
 ```
 
-This endpoint retrieves all kittens.
+Retrieves a list of users. Users will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, and 3 and 4 etc etc.
+
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://safetsystem.abusepreventionsystems.com/api/v1/users`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+page | 1 | the page of users that will be returned
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
+## Get a User
 
 ```ruby
-require 'kittn'
+require 'net/http'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
 
-```python
-import kittn
+headers = {
+  'Authorization'=>'Bearer: foobar',
+}
 
-api = kittn.authorize('meowmeowmeow')
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
 api.kittens.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2"
+  -H "Authorization: Token token=myapitoken"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "employee_id": "111",
+  "first_name": "Test",
+  "last_name": "User",
+  "score": 80,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the user to retrieve
 
-## Delete a Specific Kitten
+## Create a User
 
 ```ruby
-require 'kittn'
+require 'net/http'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
 
-```python
-import kittn
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
 
-api = kittn.authorize('meowmeowmeow')
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
 api.kittens.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
+  -X POST
+  -H "Authorization: Token token=myapitoken"
+  -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
+```
+
+> Example Success Response:
+
+```json
+No Content Body
+```
+
+> Example Error Response:
+
+```json
+    "errors": {
+      "first_name": ["You must provide a first name"],
+      "last_name": ["You must provide a last name"]
+    }
+```
+
+This endpoint creates a new user.
+
+### HTTP Request
+
+`POST https://safetsystem.abusepreventionsystems.com/api/v1/users`
+
+### User Attributes
+
+Parameter | Requred |  Description
+--------- | ----------- | ----------
+first_name | Yes | The first name of the user
+last_name | Yes | The last name of the user
+email | Yes | The user's email address
+external_id | No | You can optionally assign a user an ID for use in integration with your own system
+
+
+## Deactivate a User
+
+```ruby
+require 'net/http'
+
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
+
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
+
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
+api.kittens.delete(2)
+```
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
   -X DELETE
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: Token token=myapitoken"
 ```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
 
 ```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+  No Content Body
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint deletes a specific user.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`DELETE https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+ID | The ID of the user to delete
 
+# Trainings
+
+## Get All Trainings for a User
+
+```ruby
+require 'net/http'
+
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
+
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
+
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
+api.kittens.get
+```
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"
+  -H "Authorization: Token token=myapitoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "winner": true,
+    "score": 100,
+    "created_at": "2018-01-30T19:22:11.675-06:00",
+    "complete_date": "2018-01-30T21:42:58.675-06:00",
+    "survey_name": "Sexual Abuse Awareness Training (2018)",
+    "survey_code": "standard",
+    "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
+  }
+```
+
+Retrieves all trainings that have been assigned to a user
+
+
+### HTTP Request
+
+`GET https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>/trainings`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+ID | Yes | The ID of the user to delete
+
+## Assign a training to a User
+
+```ruby
+require 'net/http'
+
+uri = URI('http://example.com/index.html?count=10')
+Net::HTTP.get(uri)
+
+headers = {
+    'Authorization'=>'Bearer: foobar',
+    'Content-Type' =>'application/json',
+    'Accept'=>'application/json'
+}
+
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.post(uri.path, params.to_json, headers)
+
+
+
+api = Kittn::APIClient.authorize!('myapitoken')
+api.kittens.get
+```
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
+  -X POST
+  -H "Authorization: Token token=myapitoken"
+```
+
+> Example Success Response
+
+```json
+  No Content Body
+```
+
+> Example Error Response:
+
+```json
+  { "message": "Invalid survey code" }
+```
+
+Assigns the specified training to a user
+
+
+### HTTP Request
+
+`POST https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>/assign_training`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+ID | Yes | The ID of the user to whom the training will be assigned
+survey_code | No | the code for the training that will be assigned
+
+### Survey Types
+
+code | description
+--------- | -------
+`standard` | our standard 2018 Sexual Abuse Awareness Training
+`youth` | our Youth Sports Sexual Abuse Awareness Training
+`camp` | our Camp-Focused Sexual Abuse Awareness Training
+`spanish` | our Spanish Sexual Abuse Awareness Training
