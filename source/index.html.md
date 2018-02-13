@@ -3,10 +3,9 @@ title: Abuse Prevention Systems API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='mailto:jacob@ministrysafe.com'>Request a Developer Key</a>
 
 includes:
   - errors
@@ -22,26 +21,6 @@ Welcome to the MinistrySafe and Abuse Prevention Systems API! You can use our AP
 # Authentication
 
 > To authorize, use this code:
-
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -63,26 +42,6 @@ You must replace <code>myapitoken</code> with your actual API key.
 
 ## Get All Users
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.get
-```
 
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
@@ -128,25 +87,6 @@ page | 1 | the page of users that will be returned
 
 ## Get a User
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-  'Authorization'=>'Bearer: foobar',
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.get(2)
-```
-
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2"
   -H "Authorization: Token token=myapitoken"
@@ -175,30 +115,10 @@ This endpoint retrieves a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the user to retrieve
+ID | The external ID of the user to retrieve
 
 ## Create a User
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.delete(2)
-```
 
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
@@ -240,27 +160,6 @@ external_id | No | You can optionally assign a user an ID for use in integration
 
 ## Deactivate a User
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.delete(2)
-```
-
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
   -X DELETE
@@ -281,32 +180,12 @@ This endpoint deletes a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the user to delete
+ID | The external ID of the user to delete
 
 # Trainings
 
 ## Get All Trainings for a User
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.get
-```
 
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"
@@ -342,26 +221,6 @@ ID | Yes | The ID of the user to delete
 
 ## Assign a training to a User
 
-```ruby
-require 'net/http'
-
-uri = URI('http://example.com/index.html?count=10')
-Net::HTTP.get(uri)
-
-headers = {
-    'Authorization'=>'Bearer: foobar',
-    'Content-Type' =>'application/json',
-    'Accept'=>'application/json'
-}
-
-http = Net::HTTP.new(uri.host, uri.port)
-response = http.post(uri.path, params.to_json, headers)
-
-
-
-api = Kittn::APIClient.authorize!('myapitoken')
-api.kittens.get
-```
 
 ```shell
 curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
