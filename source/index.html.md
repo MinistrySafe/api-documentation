@@ -15,7 +15,9 @@ search: true
 
 # Introduction
 
-Welcome to the MinistrySafe and Abuse Prevention Systems API! You can use our API to assign and manage trainings, and deliver our content and quizzes in your own system.
+Welcome to the MinistrySafe and Abuse Prevention Systems API.
+
+You can use this API to assign trainings, manage trainings, and deliver our content and quizzes in your own system.
 
 
 # Authentication
@@ -30,7 +32,7 @@ curl "api_endpoint_here"
 
 > Make sure to replace `myapitoken` with your API key.
 
-The API uses token authentication. We expect the API key to be included in all API requests to the server in a header that looks like the following:
+The API uses token authentication. We expect the API key to be included in all API requests to the server in a header that looks like this:
 
 `"Authorization" => "Token token=myapitoken"`
 
@@ -48,7 +50,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
   -H "Authorization: Token token=myapitoken"
 ```
 
-> The above command returns JSON structured like this:
+> The command above returns JSON structured like this:
 
 ```json
   [
@@ -71,7 +73,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
   ]
 ```
 
-Retrieves a list of users. Users will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, and 3 and 4 etc etc.
+Retrieves a list of users. Users will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, 3, 4 etc.
 
 
 ### HTTP Request
@@ -92,7 +94,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2"
   -H "Authorization: Token token=myapitoken"
 ```
 
-> The above command returns JSON structured like this:
+> The command above returns JSON structured like this:
 
 ```json
 {
@@ -192,7 +194,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"
   -H "Authorization: Token token=myapitoken"
 ```
 
-> The above command returns JSON structured like this:
+> The command above returns JSON structured like this:
 
 ```json
   {
@@ -206,7 +208,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"
   }
 ```
 
-Retrieves all trainings that have been assigned to a user
+Retrieves all trainings that have been assigned to a user.
 
 
 ### HTTP Request
@@ -228,7 +230,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/assign_train
   -H "Authorization: Token token=myapitoken"
 ```
 
-> Example Success Response
+> Example Success Response:
 
 ```json
   No Content Body
@@ -240,7 +242,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/assign_train
   { "message": "Invalid survey code" }
 ```
 
-Assigns the specified training to a user
+Assigns the specified training to a user.
 
 
 ### HTTP Request
