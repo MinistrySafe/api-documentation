@@ -55,17 +55,19 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
 ```json
   [
     {
-      "employee_id": "111",
+      "id": 423,
       "first_name": "Test",
       "last_name": "User",
+      "employee_id": "111",
       "score": 80,
       "complete_date": "2016-08-17T17:07:07.292Z",
       "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
     },
     {
-      "employee_id":"123",
+      "id": 139,
       "first_name": "John",
       "last_name": "Doe",
+      "employee_id":"123",
       "score": 100,
       "complete_date": "2016-08-03T01:59:32.622Z",
       "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
@@ -98,9 +100,10 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2"
 
 ```json
 {
-  "employee_id": "111",
+  "id": 423,
   "first_name": "Test",
   "last_name": "User",
+  "employee_id": "111",
   "score": 80,
   "complete_date": "2016-08-17T17:07:07.292Z",
   "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
@@ -117,7 +120,7 @@ This endpoint retrieves a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The external ID of the user to retrieve
+ID | The ID of the user to retrieve
 
 ## Create a User
 
@@ -139,7 +142,7 @@ No Content Body
 
 ```json
     "errors": {
-      "first_name": ["You must provide a first name"],
+      ""first_name": ["You must provide a first name"],
       "last_name": ["You must provide a last name"]
     }
 ```
@@ -182,7 +185,7 @@ This endpoint deletes a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The external ID of the user to delete
+ID | The ID of the user to delete
 
 # Trainings
 

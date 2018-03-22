@@ -294,17 +294,19 @@ You must replace <code>myapitoken</code> with your actual API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">423</span><span class="p">,</span><span class="w">
       </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
       </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">139</span><span class="p">,</span><span class="w">
       </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
       </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-03T01:59:32.622Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"</span><span class="w">
@@ -335,9 +337,10 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p>The command above returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">423</span><span class="p">,</span><span class="w">
   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
   </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"</span><span class="w">
@@ -355,7 +358,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The external ID of the user to retrieve</td>
+<td>The ID of the user to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='create-a-user'>Create a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v1/users/2"</span>
@@ -372,9 +375,9 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p>Example Error Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You must provide a first name"</span><span class="p">],</span><span class="w">
-      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You must provide a last name"</span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="s2">""</span><span class="err">first_name</span><span class="s2">": ["</span><span class="err">You</span><span class="w"> </span><span class="err">must</span><span class="w"> </span><span class="err">provide</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">first</span><span class="w"> </span><span class="err">name</span><span class="s2">"],
+      "</span><span class="err">last_name</span><span class="s2">": ["</span><span class="err">You</span><span class="w"> </span><span class="err">must</span><span class="w"> </span><span class="err">provide</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="err">name</span><span class="s2">"]
+    }
 </span></code></pre>
 <p>This endpoint creates a new user.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
@@ -425,7 +428,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The external ID of the user to delete</td>
+<td>The ID of the user to delete</td>
 </tr>
 </tbody></table>
 <h1 id='trainings'>Trainings</h1><h2 id='get-all-trainings-for-a-user'>Get All Trainings for a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"</span>
