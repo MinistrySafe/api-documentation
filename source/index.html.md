@@ -222,7 +222,7 @@ Retrieves all trainings that have been assigned to a user.
 
 Parameter | Required | Description
 --------- | ------- | -----------
-ID | Yes | The ID of the user to delete
+ID | Yes | The ID of the user for whom you want to retrieve trainings
 
 ## Assign a training to a User
 
