@@ -135,14 +135,20 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
 > Example Success Response:
 
 ```json
-No Content Body
+  "id": 315,
+  "first_name": "Tom",
+  "last_name": "Harrington",
+  "score": 95,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "direct_login_url": "https://staging.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "employee_id": "123"
 ```
 
 > Example Error Response:
 
 ```json
     "errors": {
-      ""first_name": ["You must provide a first name"],
+      "first_name": ["You must provide a first name"],
       "last_name": ["You must provide a last name"]
     }
 ```
