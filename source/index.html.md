@@ -46,7 +46,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/users"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -80,7 +80,7 @@ Retrieves a list of users. Users will be returned up to 100 at a time. This endp
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v1/users`
+`GET https://safetysystem.abusepreventionsystems.com/api/v1/users`
 
 ### Query Parameters
 
@@ -92,7 +92,7 @@ page | 1 | the page of users that will be returned
 ## Get a User
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -114,7 +114,7 @@ This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>`
+`GET https://safetysystem.abusepreventionsystems.com/api/v1/users/<ID>`
 
 ### URL Parameters
 
@@ -126,7 +126,7 @@ ID | The ID of the user to retrieve
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
+curl "https://safetysystem.abusepreventionsystems.com/api/v1/users/2"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
@@ -157,7 +157,7 @@ This endpoint creates a new user.
 
 ### HTTP Request
 
-`POST https://safetsystem.abusepreventionsystems.com/api/v1/users`
+`POST https://safetysystem.abusepreventionsystems.com/api/v1/users`
 
 ### User Attributes
 
@@ -172,7 +172,7 @@ external_id | No | You can optionally assign a user an ID for use in integration
 ## Deactivate a User
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v1/users/2"
+curl "https://safetysystem.abusepreventionsystems.com/api/v1/users/2"
   -X DELETE
   -H "Authorization: Token token=myapitoken"
 ```
@@ -185,7 +185,7 @@ This endpoint deletes a specific user.
 
 ### HTTP Request
 
-`DELETE https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>`
+`DELETE https://safetysystem.abusepreventionsystems.com/api/v1/users/<ID>`
 
 ### URL Parameters
 
@@ -199,7 +199,7 @@ ID | The ID of the user to delete
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/trainings"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -222,7 +222,7 @@ Retrieves all trainings that have been assigned to a user.
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>/trainings`
+`GET https://safetysystem.abusepreventionsystems.com/api/v1/users/<ID>/trainings`
 
 ### Query Parameters
 
@@ -234,7 +234,7 @@ ID | Yes | The ID of the user for whom you want to retrieve trainings
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
 ```
@@ -256,7 +256,7 @@ Assigns the specified training to a user.
 
 ### HTTP Request
 
-`POST https://safetsystem.abusepreventionsystems.com/api/v1/users/<ID>/assign_training`
+`POST https://safetysystem.abusepreventionsystems.com/api/v1/users/<ID>/assign_training`
 
 ### Query Parameters
 
