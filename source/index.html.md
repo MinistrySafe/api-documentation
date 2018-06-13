@@ -273,3 +273,133 @@ code | description
 `youth` | our Youth Sports Sexual Abuse Awareness Training
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
+
+
+
+# Background Checks
+
+## Get All Background Checks
+
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
+  -H "Authorization: Token token=myapitoken"
+```
+
+> The command above returns JSON structured like this:
+
+```json
+  [
+    {
+      "id": 423,
+      "first_name": "Test",
+      "last_name": "User",
+      "employee_id": "111",
+      "score": 80,
+      "complete_date": "2016-08-17T17:07:07.292Z",
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+    },
+    {
+      "id": 139,
+      "first_name": "John",
+      "last_name": "Doe",
+      "employee_id":"123",
+      "score": 100,
+      "complete_date": "2016-08-03T01:59:32.622Z",
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
+    }
+  ]
+```
+
+Retrieves a list of background checks for your organization. Background Checks will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, 3, 4 etc.
+
+
+### HTTP Request
+
+`GET https://safetsystem.abusepreventionsystems.com/api/v1/background_checks`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+page | 1 | the page of background_checks that will be returned
+
+
+## Get a User
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/2"
+  -H "Authorization: Token token=myapitoken"
+```
+
+> The command above returns JSON structured like this:
+
+```json
+{
+  "id": 423,
+  "first_name": "Test",
+  "last_name": "User",
+  "employee_id": "111",
+  "score": 80,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+}
+```
+
+This endpoint retrieves a specific background check record.
+
+### HTTP Request
+
+`GET https://safetsystem.abusepreventionsystems.com/api/v1/background_checks/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the background check to retrieve
+
+## Create a Background Check
+
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v1/background_checks/2"
+  -X POST
+  -H "Authorization: Token token=myapitoken"
+  -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
+```
+
+> Example Success Response:
+
+```json
+  "id": 315,
+  "first_name": "Tom",
+  "last_name": "Harrington",
+  "score": 95,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "direct_login_url": "https://staging.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "employee_id": "123"
+```
+
+> Example Error Response:
+
+```json
+    "errors": {
+      "first_name": ["You must provide a first name"],
+      "last_name": ["You must provide a last name"]
+    }
+```
+
+This endpoint creates a new user.
+
+### HTTP Request
+
+`POST https://safetsystem.abusepreventionsystems.com/api/v1/background_checks`
+
+### User Attributes
+
+Parameter | Requred |  Description
+--------- | ----------- | ----------
+first_name | Yes | The first name of the user
+last_name | Yes | The last name of the user
+email | Yes | The user's email address
+external_id | No | You can optionally assign a user an ID for use in integration with your own system
