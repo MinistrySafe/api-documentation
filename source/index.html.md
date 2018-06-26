@@ -147,10 +147,10 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v1/users/2"
 > Example Error Response:
 
 ```json
-    "errors": {
-      "first_name": ["You must provide a first name"],
-      "last_name": ["You must provide a last name"]
-    }
+  "errors": {
+    "first_name": ["You must provide a first name"],
+    "last_name": ["You must provide a last name"]
+  }
 ```
 
 This endpoint creates a new user.
@@ -161,7 +161,7 @@ This endpoint creates a new user.
 
 ### User Attributes
 
-Parameter | Requred |  Description
+Parameter | Required |  Description
 --------- | ----------- | ----------
 first_name | Yes | The first name of the user
 last_name | Yes | The last name of the user
@@ -291,22 +291,22 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
 ```json
   [
     {
-      "id": 423,
-      "first_name": "Test",
-      "last_name": "User",
-      "employee_id": "111",
-      "score": 80,
-      "complete_date": "2016-08-17T17:07:07.292Z",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+      "id": 7122,
+      "order_date": "2017-07-18T11:39:46.503-05:00",
+      "status": "complete",
+      "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+      "results_url": "http://theresults.com/unique-results-link",
+      "user_id": 2121,
+      "level": 3
     },
     {
-      "id": 139,
-      "first_name": "John",
-      "last_name": "Doe",
-      "employee_id":"123",
-      "score": 100,
-      "complete_date": "2016-08-03T01:59:32.622Z",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
+      "id": 7423,
+      "order_date": "2018-01-16T10:54:02.585-06:00",
+      "status": "processing",
+      "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+      "results_url": null,
+      "user_id": 2132,
+      "level": 1
     }
   ]
 ```
@@ -316,7 +316,7 @@ Retrieves a list of background checks for your organization. Background Checks w
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v1/background_checks`
+`GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks`
 
 ### Query Parameters
 
@@ -325,10 +325,10 @@ Parameter | Default | Description
 page | 1 | the page of background_checks that will be returned
 
 
-## Get a User
+## Get a Background Check
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/2"
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -336,13 +336,13 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/2"
 
 ```json
 {
-  "id": 423,
-  "first_name": "Test",
-  "last_name": "User",
-  "employee_id": "111",
-  "score": 80,
-  "complete_date": "2016-08-17T17:07:07.292Z",
-  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+  "id": 7122,
+  "order_date": "2017-07-18T11:39:46.503-05:00",
+  "status": "complete",
+  "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+  "results_url": "http://theresults.com/unique-results-link",
+  "user_id": 2121,
+  "level": 3
 }
 ```
 
@@ -350,7 +350,7 @@ This endpoint retrieves a specific background check record.
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v1/background_checks/<ID>`
+`GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/<ID>`
 
 ### URL Parameters
 
@@ -362,44 +362,64 @@ ID | The ID of the background check to retrieve
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v1/background_checks/2"
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"
   -X POST
   -H "Authorization: Token token=myapitoken"
-  -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
+  -d "background_check[user_id]=123&background_check[quickapp]=true&background_check[level]=1"
 ```
 
 > Example Success Response:
 
 ```json
-  "id": 315,
-  "first_name": "Tom",
-  "last_name": "Harrington",
-  "score": 95,
-  "complete_date": "2016-08-17T17:07:07.292Z",
-  "direct_login_url": "https://staging.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "employee_id": "123"
+  {
+    "id": 7423,
+    "order_date": "2018-01-16T10:54:02.585-06:00",
+    "status": "processing",
+    "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+    "results_url": null,
+    "user_id": 123,
+    "level": 1
+  }
 ```
 
 > Example Error Response:
 
 ```json
-    "errors": {
-      "first_name": ["You must provide a first name"],
-      "last_name": ["You must provide a last name"]
-    }
+  "errors": {
+    "first_name": ["You must provide a first name"],
+    "last_name": ["You must provide a last name"]
+  }
 ```
 
-This endpoint creates a new user.
+This endpoint creates a new background check.
 
 ### HTTP Request
 
-`POST https://safetsystem.abusepreventionsystems.com/api/v1/background_checks`
+`POST https://safetsystem.abusepreventionsystems.com/api/v2/background_checks`
 
-### User Attributes
+### Background Check Attributes
 
-Parameter | Requred |  Description
---------- | ----------- | ----------
-first_name | Yes | The first name of the user
-last_name | Yes | The last name of the user
-email | Yes | The user's email address
-external_id | No | You can optionally assign a user an ID for use in integration with your own system
+Parameter | Required | Type | Description
+--------- | ----------- | ---------- | -----------
+user_id | Yes | integer | The ID of the user for whom the background check will be ordered
+level | No* |
+custom_background_check_package_id | No* | string | The level of the background check being ordered
+quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out their details. If false, all the applicant's information is required to be submitted in the initial request
+first_name | No** | string | the first name of the applicant
+last_name | No** | string | the last name of the applicant
+address | No** | string | the street address of the applicant's residence
+city | No** | string | the city of the applicant's residence
+county | No** | string | the county of the applicant's residence
+state | No** | string | the two letter state code of the applicant's residence
+zip | No** | string | the zipcode of the applicant's residence
+ssn | No** | string | the Social Security Number of the applicant
+dob | No** | string format "YYYY-MM-DD" |  The applicant's date of birth
+driver_license | No*** | string | the applicant's drivers license number
+driver_license_state | No*** | the two letter code of the applicant's drivers license state
+email | No** | string | the email address of the applicant
+
+_* One of either `level` or `custom_background_check_package_id` are required_
+
+_** Required if not doing a quickapp (`quickapp`=`false`)_
+
+_*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
