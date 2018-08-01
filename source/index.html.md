@@ -61,6 +61,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "employee_id": "111",
       "score": 80,
       "complete_date": "2016-08-17T17:07:07.292Z",
+      "user_type": "employee",
       "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
     },
     {
@@ -70,6 +71,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "employee_id":"123",
       "score": 100,
       "complete_date": "2016-08-03T01:59:32.622Z",
+      "user_type": "volunteer",
       "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
     }
   ]
@@ -106,6 +108,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "employee_id": "111",
   "score": 80,
   "complete_date": "2016-08-17T17:07:07.292Z",
+  "user_type": "employee",
   "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
 }
 ```
@@ -140,6 +143,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v1/users/2"
   "last_name": "Harrington",
   "score": 95,
   "complete_date": "2016-08-17T17:07:07.292Z",
+  "user_type": "employee",
   "direct_login_url": "https://staging.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
   "employee_id": "123"
 ```
@@ -237,6 +241,7 @@ ID | Yes | The ID of the user for whom you want to retrieve trainings
 curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
+  -d "survey_type=standard"
 ```
 
 > Example Success Response:
@@ -274,6 +279,41 @@ code | description
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
 
+## Resend a training
+
+
+```shell
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"
+  -X POST
+  -H "Authorization: Token token=myapitoken"
+  -d "survey_type=standard"
+```
+
+> Example Success Response:
+
+```json
+  No Content Body
+```
+
+> Example Error Response:
+
+```json
+  { "message": "Invalid survey code" }
+```
+
+Resends the specified training to a user.
+
+
+### HTTP Request
+
+`POST https://safetysystem.abusepreventionsystems.com/api/v1/users/<ID>/resend_training`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+ID | Yes | The ID of the user to whom the training will be resent
+survey_code | No | the code for the training that will be resent
 
 
 # Background Checks
