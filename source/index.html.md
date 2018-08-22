@@ -269,6 +269,7 @@ Parameter | Required | Description
 --------- | ------- | -----------
 ID | Yes | The ID of the user to whom the training will be assigned
 survey_code | No | the code for the training that will be assigned
+send_email | No | indicates whether an email will be automatically sent to the trainee (default is `false`)
 
 ### Survey Types
 
