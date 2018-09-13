@@ -144,7 +144,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "score": 95,
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
-  "direct_login_url": "https://staging.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
   "employee_id": "123"
 ```
 
@@ -247,7 +247,14 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_trai
 > Example Success Response:
 
 ```json
-  No Content Body
+  "id": 315,
+  "first_name": "Tom",
+  "last_name": "Harrington",
+  "score": 95,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "user_type": "employee",
+  "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "employee_id": "123"
 ```
 
 > Example Error Response:
@@ -293,7 +300,14 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_trai
 > Example Success Response:
 
 ```json
-  No Content Body
+  "id": 315,
+  "first_name": "Tom",
+  "last_name": "Harrington",
+  "score": 95,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "user_type": "employee",
+  "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "employee_id": "123"
 ```
 
 > Example Error Response:
