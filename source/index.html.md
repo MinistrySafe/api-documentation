@@ -88,7 +88,10 @@ Retrieves a list of users. Users will be returned up to 100 at a time. This endp
 
 Parameter | Default | Description
 --------- | ------- | -----------
-page | 1 | the page of users that will be returned
+page | 1 | The page of users that will be returned
+external_id | <blank> | Will filter the returned users by external_id
+search | <blank> | Will filter the returned users by a keyword search
+tag | <blank> | String. Only users having this tag will be returned
 
 
 ## Get a User
