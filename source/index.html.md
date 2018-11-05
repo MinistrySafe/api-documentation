@@ -289,6 +289,7 @@ code | description
 `youth` | our Youth Sports Sexual Abuse Awareness Training
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
+`skillful_screening` | our Skillful Screening Training
 
 ## Resend a training
 
