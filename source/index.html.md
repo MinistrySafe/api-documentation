@@ -482,3 +482,24 @@ _* One of either `level` or `custom_background_check_package_id` are required_
 _** Required if not doing a quickapp (`quickapp`=`false`)_
 
 _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
+
+# Webhooks
+
+## Implementation
+
+> The webhook posts a JSON body structured like this:
+
+```json
+  {
+    "external_id": "111",
+    "score": 80,
+    "complete_date": "2016-08-17T17:07:07.292Z",
+    "survey_code": "standard",
+    "certificate_url": "https://safetysystem.abusepreventionsystems.com/path/to/certificate"
+  }
+```
+
+Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.
+
+If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.
+
