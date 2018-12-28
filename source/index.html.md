@@ -58,7 +58,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "id": 423,
       "first_name": "Test",
       "last_name": "User",
-      "employee_id": "111",
+      "external_id": "111",
       "score": 80,
       "complete_date": "2016-08-17T17:07:07.292Z",
       "user_type": "employee",
@@ -68,7 +68,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "id": 139,
       "first_name": "John",
       "last_name": "Doe",
-      "employee_id":"123",
+      "external_id":"123",
       "score": 100,
       "complete_date": "2016-08-03T01:59:32.622Z",
       "user_type": "volunteer",
@@ -108,7 +108,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "id": 423,
   "first_name": "Test",
   "last_name": "User",
-  "employee_id": "111",
+  "external_id": "111",
   "score": 80,
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
@@ -148,7 +148,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "employee_id": "123"
+  "external_id": "123"
 ```
 
 > Example Error Response:
@@ -257,7 +257,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_trai
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "employee_id": "123"
+  "external_id": "123"
 ```
 
 > Example Error Response:
@@ -311,7 +311,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_trai
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "employee_id": "123"
+  "external_id": "123"
 ```
 
 > Example Error Response:
