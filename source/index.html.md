@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='mailto:jacob@ministrysafe.com'>Request a Developer Key</a>
+  - <a href='mailto:support@ministrysafe.com'>Request a Developer Key</a>
 
 includes:
   - errors
