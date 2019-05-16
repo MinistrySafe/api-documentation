@@ -461,8 +461,8 @@ This endpoint creates a new background check.
 Parameter | Required | Type | Description
 --------- | ----------- | ---------- | -----------
 user_id | Yes | integer | The ID of the user for whom the background check will be ordered
-level | No* |
-custom_background_check_package_id | No* | string | The level of the background check being ordered
+level | No* | The level of the background check being ordered
+custom_background_check_package_code | No* | string | The code of the custom background check package being requested
 quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out their details. If false, all the applicant's information is required to be submitted in the initial request
 first_name | No** | string | the first name of the applicant
 last_name | No** | string | the last name of the applicant
@@ -477,7 +477,7 @@ driver_license | No*** | string | the applicant's drivers license number
 driver_license_state | No*** | the two letter code of the applicant's drivers license state
 email | No** | string | the email address of the applicant
 
-_* One of either `level` or `custom_background_check_package_id` are required_
+_* One of either `level` or `custom_background_check_package_code` are required_
 
 _** Required if not doing a quickapp (`quickapp`=`false`)_
 
