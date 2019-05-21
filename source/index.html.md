@@ -97,7 +97,7 @@ tag | <blank> | String. Only users having this tag will be returned
 ## Get a User
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -132,7 +132,7 @@ ID | The ID of the user to retrieve
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
