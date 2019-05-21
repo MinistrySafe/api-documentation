@@ -97,7 +97,7 @@ tag | <blank> | String. Only users having this tag will be returned
 ## Get a User
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -461,7 +461,7 @@ This endpoint creates a new background check.
 Parameter | Required | Type | Description
 --------- | ----------- | ---------- | -----------
 user_id | Yes | integer | The ID of the user for whom the background check will be ordered
-level | No* | The level of the background check being ordered
+level | No* | integer | The level of the background check being ordered
 custom_background_check_package_code | No* | string | The code of the custom background check package being requested
 quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out their details. If false, all the applicant's information is required to be submitted in the initial request
 first_name | No** | string | the first name of the applicant
