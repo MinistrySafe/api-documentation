@@ -472,7 +472,7 @@ county | No** | string | the county of the applicant's residence
 state | No** | string | the two letter state code of the applicant's residence
 zip | No** | string | the zipcode of the applicant's residence
 ssn | No** | string | the Social Security Number of the applicant
-dob | No** | string format "YYYY-MM-DD" |  The applicant's date of birth
+dob | No** | string format "MM/DD/YYYY" |  The applicant's date of birth
 driver_license | No*** | string | the applicant's drivers license number
 driver_license_state | No*** | the two letter code of the applicant's drivers license state
 email | No** | string | the email address of the applicant
