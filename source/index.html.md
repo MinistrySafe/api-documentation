@@ -179,6 +179,21 @@ last_name | Yes | The last name of the user
 email | Yes | The user's email address
 external_id | No | You can optionally assign a user an ID for use in integration with your own system
 
+This endpoint updates a user.
+
+### HTTP Request
+
+`PUT https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
+
+### User Attributes
+
+Parameter | Required |  Description
+--------- | ----------- | ----------
+ID | The ID of the user to update
+first_name | Yes | The first name of the user
+last_name | Yes | The last name of the user
+email | Yes | The user's email address
+tag_list | the user's tag list
 
 ## Deactivate a User
 
@@ -508,4 +523,3 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.
 
 If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.
-
