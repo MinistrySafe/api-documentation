@@ -248,7 +248,7 @@ ID | Yes | The ID of the user for whom you want to retrieve trainings
 curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
-  -d "survey_type=standard"
+  -d "survey_code=standard"
 ```
 
 > Example Success Response:
@@ -303,7 +303,7 @@ code | description
 curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
-  -d "survey_type=standard"
+  -d "survey_code=standard"
 ```
 
 > Example Success Response:
@@ -508,4 +508,3 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.
 
 If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.
-
