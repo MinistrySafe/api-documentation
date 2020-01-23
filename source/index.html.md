@@ -179,9 +179,44 @@ last_name | Yes | The last name of the user
 email | Yes | The user's email address
 external_id | No | You can optionally assign a user an ID for use in integration with your own system
 
-This endpoint updates a user.
+
+## Update a User
+
+
+```shell
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/1"
+  -X PUT
+  -H "Authorization: Token token=myapitoken"
+  -d "user[first_name]=Tim"
+```
+
+> Example Success Response:
+
+```json
+  "id": 1,
+  "first_name": "Tim",
+  "last_name": "Harrington",
+  "email": "test@example.com",
+  "score": 95,
+  "complete_date": "2016-08-17T17:07:07.292Z",
+  "user_type": "employee",
+  "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
+  "external_id": "123"
+```
+
+> Example Error Response:
+
+```json
+  "errors": {
+    "first_name": ["You must provide a first name"],
+    "last_name": ["You must provide a last name"]
+  }
+```
 
 ### HTTP Request
+
+This endpoint updates a user.
+
 
 `PUT https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
 
@@ -189,11 +224,10 @@ This endpoint updates a user.
 
 Parameter | Required |  Description
 --------- | ----------- | ----------
-ID | The ID of the user to update
-first_name | Yes | The first name of the user
-last_name | Yes | The last name of the user
-email | Yes | The user's email address
-tag_list | the user's tag list
+first_name | No | New user's first name
+last_name | No | New user's last name
+email | No | New user's email
+tag_list | No | Nw user's tag list
 
 ## Deactivate a User
 
