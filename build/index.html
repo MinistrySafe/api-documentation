@@ -276,7 +276,10 @@
             <a href="#webhooks" class="toc-h1 toc-link" data-title="webhooks">Webhooks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#implementation" class="toc-h2 toc-link" data-title="implementation">Implementation</a>
+                    <a href="#quizzes" class="toc-h2 toc-link" data-title="quizzes">Quizzes</a>
+                  </li>
+                  <li>
+                    <a href="#background-checks-2" class="toc-h2 toc-link" data-title="background-checks">Background checks</a>
                   </li>
               </ul>
           </li>
@@ -582,7 +585,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <h2 id='assign-a-training-to-a-user'>Assign a training to a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"</span>
   -X POST
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
-  -d <span class="s2">"survey_type=standard"</span>
+  -d <span class="s2">"survey_code=standard"</span>
 </code></pre>
 <blockquote>
 <p>Example Success Response:</p>
@@ -660,7 +663,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <h2 id='resend-a-training'>Resend a training</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"</span>
   -X POST
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
-  -d <span class="s2">"survey_type=standard"</span>
+  -d <span class="s2">"survey_code=standard"</span>
 </code></pre>
 <blockquote>
 <p>Example Success Response:</p>
@@ -918,7 +921,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p><em>** Required if not doing a quickapp (<code>quickapp</code>=<code>false</code>)</em></p>
 
 <p><em>*** Required for levels 2, 4, 5, 6, 7, and some custom packages</em></p>
-<h1 id='webhooks'>Webhooks</h1><h2 id='implementation'>Implementation</h2>
+<h1 id='webhooks'>Webhooks</h1><h2 id='quizzes'>Quizzes</h2><h3 id='implementation'>Implementation</h3>
 <blockquote>
 <p>The webhook posts a JSON body structured like this:</p>
 </blockquote>
@@ -933,6 +936,20 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p>Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.</p>
 
 <p>If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.</p>
+<h2 id='background-checks-2'>Background checks</h2><h3 id='implementation-2'>Implementation</h3>
+<blockquote>
+<p>The webhook posts a JSON body structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@email.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://reports.ministrysafe.com/send/interchangeview/?parameters=values"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-30T10:35:21.548Z"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Webhooks are triggered when the background check is ready to be reviewed, and can be configured in your developer console.</p>
+
+<p>If webhooks are enabled, when a background check is ready, we send a http POST request to the URLs you choose to specify.</p>
 <h1 id='errors'>Errors</h1>
 <p>The API uses the following error codes:</p>
 
