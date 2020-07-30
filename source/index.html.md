@@ -540,7 +540,9 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 
 # Webhooks
 
-## Implementation
+## Quizzes
+
+### Implementation
 
 > The webhook posts a JSON body structured like this:
 
@@ -557,3 +559,22 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.
 
 If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.
+
+## Background checks
+
+### Implementation
+
+> The webhook posts a JSON body structured like this:
+
+```json
+  {
+    "email": "user@email.com",
+    "external_id": "111",
+    "results_url": "https://reports.ministrysafe.com/send/interchangeview/?parameters=values",
+    "complete_date": "2020-07-30T10:35:21.548Z",
+  }
+```
+
+Webhooks are triggered when the background check is ready to be reviewed, and can be configured in your developer console.
+
+If webhooks are enabled, when a background check is ready, we send a http POST request to the URLs you choose to specify.
