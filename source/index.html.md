@@ -548,6 +548,7 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 
 ```json
   {
+    "id": "123",
     "external_id": "111",
     "score": 80,
     "complete_date": "2016-08-17T17:07:07.292Z",
@@ -568,6 +569,8 @@ If webhooks are enabled, when a trainee completes a quiz, we send a http POST re
 
 ```json
   {
+    "id": "100",
+    "user_id": "123",
     "email": "user@email.com",
     "external_id": "111",
     "results_url": "https://reports.ministrysafe.com/send/interchangeview/?parameters=values",
