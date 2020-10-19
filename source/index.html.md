@@ -538,6 +538,28 @@ _** Required if not doing a quickapp (`quickapp`=`false`)_
 
 _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 
+## Get Available Levels
+
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"
+  -X GET
+  -H "Authorization: Token token=myapitoken"
+```
+
+> Example Success Response:
+
+```json
+  [1, 2, 3, 4, 5, 6, 7]
+```
+
+Each organization could have different levels that are available to their users. This endpoint returns the background check levels that are available to order on a user.
+
+### HTTP Request
+
+`GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels`
+
+
 # Webhooks
 
 ## Quizzes

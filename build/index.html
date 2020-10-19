@@ -270,6 +270,9 @@
                   <li>
                     <a href="#create-a-background-check" class="toc-h2 toc-link" data-title="create-a-background-check">Create a Background Check</a>
                   </li>
+                  <li>
+                    <a href="#get-available-levels" class="toc-h2 toc-link" data-title="get-available-levels">Get Available Levels</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -921,6 +924,18 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p><em>** Required if not doing a quickapp (<code>quickapp</code>=<code>false</code>)</em></p>
 
 <p><em>*** Required for levels 2, 4, 5, 6, 7, and some custom packages</em></p>
+<h2 id='get-available-levels'>Get Available Levels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"</span>
+  -X GET
+  -H <span class="s2">"Authorization: Token token=myapitoken"</span>
+</code></pre>
+<blockquote>
+<p>Example Success Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Each organization could have different levels that are available to their users. This endpoint returns the background check levels that are available to order on a user.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels</code></p>
 <h1 id='webhooks'>Webhooks</h1><h2 id='quizzes'>Quizzes</h2><h3 id='implementation'>Implementation</h3>
 <blockquote>
 <p>The webhook posts a JSON body structured like this:</p>
