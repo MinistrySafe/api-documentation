@@ -343,9 +343,9 @@ code | description
 `youth` | our Youth Sports Sexual Abuse Awareness Training
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
-`daycare'` | our Daycare-Focused Sexual Abuse Awareness Training
-`education'` | our Education-Focused Sexual Abuse Awareness Training
-`youth_ministry'` | our Youth Ministry Sexual Abuse Awareness Training
+`daycare` | our Daycare-Focused Sexual Abuse Awareness Training
+`education` | our Education-Focused Sexual Abuse Awareness Training
+`youth_ministry` | our Youth Ministry Sexual Abuse Awareness Training
 `skillful_screening` | our Skillful Screening Training
 `parent_training` | our Parent Training
 
