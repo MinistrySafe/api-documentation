@@ -271,7 +271,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
     "score": 100,
     "created_at": "2018-01-30T19:22:11.675-06:00",
     "complete_date": "2018-01-30T21:42:58.675-06:00",
-    "survey_name": "Sexual Abuse Awareness Training (2018)",
+    "survey_name": "Sexual Abuse Awareness Training (2021)",
     "survey_code": "standard",
     "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
   }
@@ -339,11 +339,16 @@ send_email | No | indicates whether an email will be automatically sent to the t
 
 code | description
 --------- | -------
-`standard` | our standard 2018 Sexual Abuse Awareness Training
+`standard` | our standard 2021 Sexual Abuse Awareness Training
 `youth` | our Youth Sports Sexual Abuse Awareness Training
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
+`daycare'` | our Daycare-Focused Sexual Abuse Awareness Training
+`education'` | our Education-Focused Sexual Abuse Awareness Training
+`youth_ministry'` | our Youth Ministry Sexual Abuse Awareness Training
 `skillful_screening` | our Skillful Screening Training
+`parent_training` | our Parent Training
+
 
 ## Resend a training
 
