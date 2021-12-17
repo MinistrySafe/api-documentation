@@ -177,6 +177,7 @@ Parameter | Required |  Description
 first_name | Yes | The first name of the user
 last_name | Yes | The last name of the user
 email | Yes | The user's email address
+user_type | No | string | ['employee', 'volunteer']
 external_id | No | You can optionally assign a user an ID for use in integration with your own system
 
 
@@ -536,6 +537,8 @@ dob | No** | string format "MM/DD/YYYY" |  The applicant's date of birth
 driver_license | No*** | string | the applicant's drivers license number
 driver_license_state | No*** | the two letter code of the applicant's drivers license state
 email | No** | string | the email address of the applicant
+user_type | No | string | ['employee', 'volunteer']
+child_serving | No | boolean | Designates whether the user is in a child-serving role
 
 _* One of either `level` or `custom_background_check_package_code` are required_
 
