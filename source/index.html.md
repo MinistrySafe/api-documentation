@@ -177,7 +177,7 @@ Parameter | Required |  Description
 first_name | Yes | The first name of the user
 last_name | Yes | The last name of the user
 email | Yes | The user's email address
-user_type | No | string | ['employee', 'volunteer']
+user_type | No | ['employee', 'volunteer']
 external_id | No | You can optionally assign a user an ID for use in integration with your own system
 
 
