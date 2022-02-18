@@ -578,7 +578,7 @@ Each organization could have different levels that are available to their users.
 
 ```json
   {
-    "id": "123",
+    "user_id": "123",
     "external_id": "111",
     "score": 80,
     "complete_date": "2016-08-17T17:07:07.292Z",
