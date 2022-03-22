@@ -349,6 +349,7 @@ code | description
 `youth_ministry` | our Youth Ministry Sexual Abuse Awareness Training
 `skillful_screening` | our Skillful Screening Training
 `parent_training` | our Parent Training
+`california` | the training specifically including the new California legal requirements
 
 
 ## Resend a training
