@@ -540,6 +540,8 @@ driver_license_state | No*** | the two letter code of the applicant's drivers li
 email | No** | string | the email address of the applicant
 user_type | No | string | ['employee', 'volunteer']
 child_serving | No | boolean | Designates whether the user is in a child-serving role
+salary_range | No | string | ['under_20k', '20k_25k', '25k_75k', '75k_plus']
+age_over_13 | No | boolean | Whether the applicant is over 13 years of age
 
 _* One of either `level` or `custom_background_check_package_code` are required_
 
