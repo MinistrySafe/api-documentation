@@ -483,7 +483,7 @@ ID | The ID of the background check to retrieve
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "background_check[user_id]=123&background_check[quickapp]=true&background_check[level]=1"
@@ -548,6 +548,48 @@ _* One of either `level` or `custom_background_check_package_code` are required_
 _** Required if not doing a quickapp (`quickapp`=`false`)_
 
 _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
+
+
+## Archive a Background Check
+
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"
+  -X PUT
+  -H "Authorization: Token token=myapitoken"
+```
+
+> Example Success Response:
+
+```json
+  {
+    "id": 7423,
+    "order_date": "2018-01-16T10:54:02.585-06:00",
+    "status": "archived",
+    "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+    "results_url": null,
+    "user_id": 123,
+    "level": 1
+  }
+```
+
+> Example Error Response:
+
+```json
+  { "message": "Background Check not found" }
+```
+
+This endpoint archives a background check.
+
+### HTTP Request
+
+`PUT https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/<ID>/archive`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the background check to archive
 
 ## Get Available Levels
 
