@@ -177,6 +177,7 @@ Parameter | Required |  Description
 first_name | Yes | The first name of the user
 last_name | Yes | The last name of the user
 email | Yes | The user's email address
+user_type | No | ['employee', 'volunteer']
 external_id | No | You can optionally assign a user an ID for use in integration with your own system
 
 
@@ -271,7 +272,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
     "score": 100,
     "created_at": "2018-01-30T19:22:11.675-06:00",
     "complete_date": "2018-01-30T21:42:58.675-06:00",
-    "survey_name": "Sexual Abuse Awareness Training (2018)",
+    "survey_name": "Sexual Abuse Awareness Training (2021)",
     "survey_code": "standard",
     "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
   }
@@ -339,11 +340,17 @@ send_email | No | indicates whether an email will be automatically sent to the t
 
 code | description
 --------- | -------
-`standard` | our standard 2018 Sexual Abuse Awareness Training
+`standard` | our standard 2021 Sexual Abuse Awareness Training
 `youth` | our Youth Sports Sexual Abuse Awareness Training
 `camp` | our Camp-Focused Sexual Abuse Awareness Training
 `spanish` | our Spanish Sexual Abuse Awareness Training
+`daycare` | our Daycare-Focused Sexual Abuse Awareness Training
+`education` | our Education-Focused Sexual Abuse Awareness Training
+`youth_ministry` | our Youth Ministry Sexual Abuse Awareness Training
 `skillful_screening` | our Skillful Screening Training
+`parent_training` | our Parent Training
+`california` | the training specifically including the new California legal requirements
+
 
 ## Resend a training
 
@@ -476,7 +483,7 @@ ID | The ID of the background check to retrieve
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "background_check[user_id]=123&background_check[quickapp]=true&background_check[level]=1"
@@ -531,12 +538,58 @@ dob | No** | string format "MM/DD/YYYY" |  The applicant's date of birth
 driver_license | No*** | string | the applicant's drivers license number
 driver_license_state | No*** | the two letter code of the applicant's drivers license state
 email | No** | string | the email address of the applicant
+user_type | No | string | ['employee', 'volunteer']
+child_serving | No | boolean | Designates whether the user is in a child-serving role
+salary_range | No | string | ['under_20k', '20k_25k', '25k_75k', '75k_plus']
+age_over_13 | No | boolean | Whether the applicant is over 13 years of age
 
 _* One of either `level` or `custom_background_check_package_code` are required_
 
 _** Required if not doing a quickapp (`quickapp`=`false`)_
 
 _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
+
+
+## Archive a Background Check
+
+
+```shell
+curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"
+  -X PUT
+  -H "Authorization: Token token=myapitoken"
+```
+
+> Example Success Response:
+
+```json
+  {
+    "id": 7423,
+    "order_date": "2018-01-16T10:54:02.585-06:00",
+    "status": "archived",
+    "applicant_interface_url": "http://theresults.com/form-for-applicant-to-complete",
+    "results_url": null,
+    "user_id": 123,
+    "level": 1
+  }
+```
+
+> Example Error Response:
+
+```json
+  { "message": "Background Check not found" }
+```
+
+This endpoint archives a background check.
+
+### HTTP Request
+
+`PUT https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/<ID>/archive`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the background check to archive
 
 ## Get Available Levels
 
@@ -570,7 +623,7 @@ Each organization could have different levels that are available to their users.
 
 ```json
   {
-    "id": "123",
+    "user_id": "123",
     "external_id": "111",
     "score": 80,
     "complete_date": "2016-08-17T17:07:07.292Z",

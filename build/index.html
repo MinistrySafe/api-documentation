@@ -271,6 +271,9 @@
                     <a href="#create-a-background-check" class="toc-h2 toc-link" data-title="create-a-background-check">Create a Background Check</a>
                   </li>
                   <li>
+                    <a href="#archive-a-background-check" class="toc-h2 toc-link" data-title="archive-a-background-check">Archive a Background Check</a>
+                  </li>
+                  <li>
                     <a href="#get-available-levels" class="toc-h2 toc-link" data-title="get-available-levels">Get Available Levels</a>
                   </li>
               </ul>
@@ -469,6 +472,11 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>The user&#39;s email address</td>
 </tr>
 <tr>
+<td>user_type</td>
+<td>No</td>
+<td>[&#39;employee&#39;, &#39;volunteer&#39;]</td>
+</tr>
+<tr>
 <td>external_id</td>
 <td>No</td>
 <td>You can optionally assign a user an ID for use in integration with your own system</td>
@@ -563,7 +571,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-30T19:22:11.675-06:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-30T21:42:58.675-06:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"survey_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sexual Abuse Awareness Training (2018)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"survey_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sexual Abuse Awareness Training (2021)"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://safetysystem.ministrysafe.com/trainings/4?print=true"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -644,7 +652,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td><code>standard</code></td>
-<td>our standard 2018 Sexual Abuse Awareness Training</td>
+<td>our standard 2021 Sexual Abuse Awareness Training</td>
 </tr>
 <tr>
 <td><code>youth</code></td>
@@ -659,8 +667,28 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>our Spanish Sexual Abuse Awareness Training</td>
 </tr>
 <tr>
+<td><code>daycare</code></td>
+<td>our Daycare-Focused Sexual Abuse Awareness Training</td>
+</tr>
+<tr>
+<td><code>education</code></td>
+<td>our Education-Focused Sexual Abuse Awareness Training</td>
+</tr>
+<tr>
+<td><code>youth_ministry</code></td>
+<td>our Youth Ministry Sexual Abuse Awareness Training</td>
+</tr>
+<tr>
 <td><code>skillful_screening</code></td>
 <td>our Skillful Screening Training</td>
+</tr>
+<tr>
+<td><code>parent_training</code></td>
+<td>our Parent Training</td>
+</tr>
+<tr>
+<td><code>california</code></td>
+<td>the training specifically including the new California legal requirements</td>
 </tr>
 </tbody></table>
 <h2 id='resend-a-training'>Resend a training</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"</span>
@@ -783,7 +811,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>The ID of the background check to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-background-check'>Create a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"</span>
+<h2 id='create-a-background-check'>Create a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"</span>
   -X POST
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
   -d <span class="s2">"background_check[user_id]=123&amp;background_check[quickapp]=true&amp;background_check[level]=1"</span>
@@ -917,6 +945,30 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>string</td>
 <td>the email address of the applicant</td>
 </tr>
+<tr>
+<td>user_type</td>
+<td>No</td>
+<td>string</td>
+<td>[&#39;employee&#39;, &#39;volunteer&#39;]</td>
+</tr>
+<tr>
+<td>child_serving</td>
+<td>No</td>
+<td>boolean</td>
+<td>Designates whether the user is in a child-serving role</td>
+</tr>
+<tr>
+<td>salary_range</td>
+<td>No</td>
+<td>string</td>
+<td>[&#39;under_20k&#39;, &#39;20k_25k&#39;, &#39;25k_75k&#39;, &#39;75k_plus&#39;]</td>
+</tr>
+<tr>
+<td>age_over_13</td>
+<td>No</td>
+<td>boolean</td>
+<td>Whether the applicant is over 13 years of age</td>
+</tr>
 </tbody></table>
 
 <p><em>* One of either <code>level</code> or <code>custom_background_check_package_code</code> are required</em></p>
@@ -924,6 +976,43 @@ You must replace <code>myapitoken</code> with your actual API key.
 <p><em>** Required if not doing a quickapp (<code>quickapp</code>=<code>false</code>)</em></p>
 
 <p><em>*** Required for levels 2, 4, 5, 6, 7, and some custom packages</em></p>
+<h2 id='archive-a-background-check'>Archive a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"</span>
+  -X PUT
+  -H <span class="s2">"Authorization: Token token=myapitoken"</span>
+</code></pre>
+<blockquote>
+<p>Example Success Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7423</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-16T10:54:02.585-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"archived"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"applicant_interface_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://theresults.com/form-for-applicant-to-complete"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Error Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background Check not found"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint archives a background check.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>PUT https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/&lt;ID&gt;/archive</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the background check to archive</td>
+</tr>
+</tbody></table>
 <h2 id='get-available-levels'>Get Available Levels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"</span>
   -X GET
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
@@ -934,14 +1023,14 @@ You must replace <code>myapitoken</code> with your actual API key.
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Each organization could have different levels that are available to their users. This endpoint returns the background check levels that are available to order on a user.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels</code></p>
 <h1 id='webhooks'>Webhooks</h1><h2 id='quizzes'>Quizzes</h2><h3 id='implementation'>Implementation</h3>
 <blockquote>
 <p>The webhook posts a JSON body structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
     </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
