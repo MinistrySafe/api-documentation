@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='mailto:support@ministrysafe.com'>Request a Developer Key</a>
+  - <a href='https://ministrysafe.zendesk.com/hc/en-us/articles/9388755288084-How-to-Generate-an-API-Key'>Generate API Key Instructions</a>
 
 includes:
   - errors
