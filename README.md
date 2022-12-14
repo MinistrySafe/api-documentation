@@ -34,6 +34,14 @@ Getting started with Slate is super easy! Simply fork this repository and follow
 Getting Started with Slate
 ------------------------------
 
+### Branches
+
+We got 2 branches, one for APS and one for MS documentation:
+
+ - ms: https://developers.ministrysafe.com/
+ - aps: http://developers.abusepreventionsystems.com/
+
+
 ### Prerequisites
 
 You're going to need:
