@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://ministrysafe.zendesk.com/hc/en-us/articles/9388755288084-How-to-Generate-an-API-Key'>Generate API Key Instructions</a>
+  - <a href='https://abusepreventionsystems.zendesk.com/hc/en-us/articles/9389164938132-How-to-Generate-an-API-Key'>Generate API Key Instructions</a>
 
 includes:
   - errors
