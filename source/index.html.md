@@ -397,7 +397,7 @@ ID | Yes | The ID of the user to whom the training will be resent
 survey_code | No | the code for the training that will be resent
 
 
-## Get All Trainings of the Organization
+## Get All Trainings
 
 
 ```shell
