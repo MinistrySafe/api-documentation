@@ -437,8 +437,8 @@ Retrieves all trainings that have been assigned to users in the organization.
 Parameter | Required | Description
 --------- | ------- | -----------
 page | 1 | The page of trainings that will be returned
-start_date |  | The starting date to filter trainings that were assigned on or after
-end_date |  | The ending date to filter trainings  that were assigned on or before
+start_date |  | The starting date for training assignments. *(Format: mm/dd/yyyy)*
+end_date |  | The end date for training assignments. *(Format: mm/dd/yyyy)*
 
 
 # Background Checks
@@ -488,8 +488,8 @@ Retrieves a list of background checks for your organization. Background Checks w
 Parameter | Default | Description
 --------- | ------- | -----------
 page | 1 | the page of background_checks that will be returned
-start_date |  | The starting date to filter background checks that were assigned on or after
-end_date |  | The ending date to filter background checks that were assigned on or before
+start_date |  | The start date for background check assignments. *(Format: mm/dd/yyyy)*
+end_date |  | The end date for background check assignments. *(Format: mm/dd/yyyy)*
  
 
 ## Get a Background Check

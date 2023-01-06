@@ -257,7 +257,7 @@
                     <a href="#resend-a-training" class="toc-h2 toc-link" data-title="resend-a-training">Resend a training</a>
                   </li>
                   <li>
-                    <a href="#get-all-trainings-of-the-organization" class="toc-h2 toc-link" data-title="get-all-trainings-of-the-organization">Get All Trainings of the Organization</a>
+                    <a href="#get-all-trainings-of-the-organization" class="toc-h2 toc-link" data-title="get-all-trainings-of-the-organization">Get All Trainings for the Organization</a>
                   </li>
               </ul>
           </li>
@@ -751,7 +751,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>the code for the training that will be resent</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-trainings-of-the-organization'>Get All Trainings of the Organization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/trainings"</span>
+<h2 id='get-all-trainings-of-the-organization'>Get All Trainings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/trainings"</span>
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
 <blockquote>
@@ -1114,7 +1114,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Retrieves a list of tags of your organization. Tags will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred tags, change the <code>page</code> param to 2, 3, 4 etc.</p>
+<p>Retrieves a list of tags for your organization. Tags will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred tags, change the <code>page</code> param to 2, 3, 4 etc.</p>
 <h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET https://safetysystem.ministrysafe.com/api/v2/tags</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
