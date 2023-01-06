@@ -350,7 +350,7 @@ code | description
 `skillful_screening` | our Skillful Screening Training
 `parent_training` | our Parent Training
 `california` | the training specifically including the new California legal requirements
-
+`peer_to_peer_training` | our Peer-to-Peer Sexual Abuse Training
 
 ## Resend a training
 
@@ -395,6 +395,50 @@ Parameter | Required | Description
 --------- | ------- | -----------
 ID | Yes | The ID of the user to whom the training will be resent
 survey_code | No | the code for the training that will be resent
+
+
+## Get All Trainings of the Organization
+
+
+```shell
+curl "https://safetysystem.abusepreventionsystems.com/api/v2/trainings"
+  -H "Authorization: Token token=myapitoken"
+```
+
+> The command above returns JSON structured like this:
+
+```json
+  {
+    "id": 1
+    "winner": true,
+    "score": 100,
+    "created_at": "2018-01-30T19:22:11.675-06:00",
+    "complete_date": "2018-01-30T21:42:58.675-06:00",
+    "survey_name": "Sexual Abuse Awareness Training (2021)",
+    "survey_code": "standard",
+    "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
+    "participant": {
+      "employee_id": "employee-id",
+      "first_name": "John",
+      "last_name": "Doe"
+    }
+  }
+```
+
+Retrieves all trainings that have been assigned to users in the organization.
+
+
+### HTTP Request
+
+`GET https://safetysystem.abusepreventionsystems.com/api/v2/trainings`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+page | 1 | The page of trainings that will be returned
+start_date |  | The starting date to filter trainings that were assigned on or after
+end_date |  | The ending date to filter trainings  that were assigned on or before
 
 
 # Background Checks
@@ -444,7 +488,9 @@ Retrieves a list of background checks for your organization. Background Checks w
 Parameter | Default | Description
 --------- | ------- | -----------
 page | 1 | the page of background_checks that will be returned
-
+start_date |  | The starting date to filter background checks that were assigned on or after
+end_date |  | The ending date to filter background checks that were assigned on or before
+ 
 
 ## Get a Background Check
 
@@ -611,6 +657,43 @@ Each organization could have different levels that are available to their users.
 ### HTTP Request
 
 `GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels`
+
+
+# Tags
+
+## Get All Tags
+
+
+```shell
+curl "https://safetysystem.ministrysafe.com/api/v2/tags"
+  -H "Authorization: Token token=myapitoken"
+```
+
+> The command above returns JSON structured like this:
+
+```json
+  [
+    {
+      "name": "Tag A"
+    },
+    {
+      "name": "Tag B"
+    }
+  ]
+```
+
+Retrieves a list of tags of your organization. Tags will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred tags, change the `page` param to 2, 3, 4 etc.
+
+
+### HTTP Request
+
+`GET https://safetysystem.ministrysafe.com/api/v2/tags`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+page | 1 | the page of tags that will be returned
 
 
 # Webhooks
