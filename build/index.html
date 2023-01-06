@@ -257,7 +257,7 @@
                     <a href="#resend-a-training" class="toc-h2 toc-link" data-title="resend-a-training">Resend a training</a>
                   </li>
                   <li>
-                    <a href="#get-all-trainings-of-the-organization" class="toc-h2 toc-link" data-title="get-all-trainings-of-the-organization">Get All Trainings of the Organization</a>
+                    <a href="#get-all-trainings" class="toc-h2 toc-link" data-title="get-all-trainings">Get All Trainings</a>
                   </li>
               </ul>
           </li>
@@ -751,7 +751,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>the code for the training that will be resent</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-trainings-of-the-organization'>Get All Trainings of the Organization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/trainings"</span>
+<h2 id='get-all-trainings'>Get All Trainings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/trainings"</span>
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
 <blockquote>
@@ -792,12 +792,12 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>start_date</td>
 <td></td>
-<td>The starting date to filter trainings that were assigned on or after</td>
+<td>The start date for background check assignments. <em>(Format: mm/dd/yyyy)</em></td>
 </tr>
 <tr>
 <td>end_date</td>
 <td></td>
-<td>The ending date to filter trainings  that were assigned on or before</td>
+<td>The end date for background check assignments. <em>(Format: mm/dd/yyyy)</em></td>
 </tr>
 </tbody></table>
 <h1 id='background-checks'>Background Checks</h1><h2 id='get-all-background-checks'>Get All Background Checks</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"</span>

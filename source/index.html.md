@@ -398,7 +398,7 @@ ID | Yes | The ID of the user to whom the training will be resent
 survey_code | No | the code for the training that will be resent
 
 
-## Get All Trainings of the Organization
+## Get All Trainings
 
 
 ```shell
@@ -438,8 +438,8 @@ Retrieves all trainings that have been assigned to users in the organization.
 Parameter | Required | Description
 --------- | ------- | -----------
 page | 1 | The page of trainings that will be returned
-start_date |  | The starting date to filter trainings that were assigned on or after
-end_date |  | The ending date to filter trainings  that were assigned on or before
+start_date |  | The start date for background check assignments. *(Format: mm/dd/yyyy)*
+end_date |  | The end date for background check assignments. *(Format: mm/dd/yyyy)*
 
 
 # Background Checks
