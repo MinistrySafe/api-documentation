@@ -63,7 +63,12 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "score": 80,
       "complete_date": "2016-08-17T17:07:07.292Z",
       "user_type": "employee",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
+      "tags": [
+          "Tag-1",
+          "Tag-2",
+          "Tag-3"
+      ]
     },
     {
       "id": 139,
@@ -74,7 +79,11 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "score": 100,
       "complete_date": "2016-08-03T01:59:32.622Z",
       "user_type": "volunteer",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3"
+      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3",
+      "tags": [
+          "Tag-4",
+          "Tag-5"
+      ]
     }
   ]
 ```
@@ -115,7 +124,11 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "score": 80,
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
-  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3"
+  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
+  "tags": [
+      "Tag-1",
+      "Tag-2"
+  ]
 }
 ```
 
@@ -152,7 +165,8 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "external_id": "123"
+  "external_id": "123",
+  "tags": []
 ```
 
 > Example Error Response:
@@ -202,7 +216,11 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/1"
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "external_id": "123"
+  "external_id": "123",
+  "tags": [
+      "Tag-1",
+      "Tag-2"
+  ]
 ```
 
 > Example Error Response:
@@ -268,13 +286,19 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
 
 ```json
   {
+    "id": 12345,
     "winner": true,
     "score": 100,
     "created_at": "2018-01-30T19:22:11.675-06:00",
     "complete_date": "2018-01-30T21:42:58.675-06:00",
     "survey_name": "Sexual Abuse Awareness Training (2021)",
     "survey_code": "standard",
-    "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
+    "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true",
+    "participant": {
+        "employee_id": "employee-id",
+        "first_name": "John",
+        "last_name": "Sawyer"
+    }
   }
 ```
 
@@ -312,7 +336,12 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_trai
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
-  "external_id": "123"
+  "external_id": "123",
+  "participant": {
+      "employee_id": "employee-id",
+      "first_name": "John",
+      "last_name": "Sawyer"
+  }
 ```
 
 > Example Error Response:
