@@ -295,6 +295,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
     "survey_code": "standard",
     "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true",
     "participant": {
+        "id": 123,
         "employee_id": "employee-id",
         "first_name": "John",
         "last_name": "Sawyer"
@@ -338,6 +339,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_trai
   "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41",
   "external_id": "123",
   "participant": {
+      "id": 123,
       "employee_id": "employee-id",
       "first_name": "John",
       "last_name": "Sawyer"
@@ -448,6 +450,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/trainings"
     "survey_code": "standard",
     "certificate_url": "http://safetysystem.ministrysafe.com/trainings/4?print=true"
     "participant": {
+      "id": 123,
       "employee_id": "employee-id",
       "first_name": "John",
       "last_name": "Doe"
