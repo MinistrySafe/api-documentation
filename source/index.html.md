@@ -382,6 +382,7 @@ code | description
 `parent_training` | our Parent Training
 `california` | the training specifically including the new California legal requirements
 `peer_to_peer_training` | our Peer-to-Peer Sexual Abuse Training
+`harassment` | our Preventing Sexual Harassment Training
 
 
 ## Resend a training
