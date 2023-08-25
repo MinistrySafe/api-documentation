@@ -99,10 +99,10 @@ Retrieves a list of Users. Users will be returned up to 100 at a time. This endp
 
 Parameter | Default | Description
 --------- | ------- | -----------
-page | 1 | The page of users that will be returned
-external_id | <blank> | Will filter the returned users by external_id
-search | <blank> | Will filter the returned users by a keyword search
-tag | <blank> | Only users having this tag will be returned
+page | 1 | The page of Users that will be returned
+external_id | <blank> | Will filter the returned Users by external_id
+search | <blank> | Will filter the returned Users by a keyword search
+tag | <blank> | Only Users having this Tag will be returned
 
 
 ## Get a User
@@ -132,7 +132,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
 }
 ```
 
-This endpoint retrieves a specific user.
+This endpoint retrieves a specific User.
 
 ### HTTP Request
 
@@ -142,7 +142,7 @@ This endpoint retrieves a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the user to retrieve
+ID | The ID of the User to retrieve
 
 ## Create a User
 
@@ -178,7 +178,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   }
 ```
 
-This endpoint creates a new user.
+This endpoint creates a new User.
 
 ### HTTP Request
 
@@ -234,7 +234,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/1"
 
 ### HTTP Request
 
-This endpoint updates a user.
+This endpoint updates a User.
 
 
 `PUT https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
@@ -243,10 +243,10 @@ This endpoint updates a user.
 
 Parameter | Required |  Description
 --------- | ----------- | ----------
-first_name | No | New user's first name
-last_name | No | New user's last name
-email | No | New user's email
-tag_list | No | New user's tag list
+first_name | No | New User's first name
+last_name | No | New User's last name
+email | No | New User's email
+tag_list | No | New User's Tag list
 
 ## Deactivate a User
 
@@ -260,7 +260,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   No Content Body
 ```
 
-This endpoint deletes a specific user.
+This endpoint deletes a specific User.
 
 ### HTTP Request
 
@@ -270,7 +270,7 @@ This endpoint deletes a specific user.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the user to delete
+ID | The ID of the User to delete
 
 # Trainings
 
@@ -303,7 +303,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
   }
 ```
 
-Retrieves all trainings that have been assigned to a user.
+Retrieves all Trainings that have been assigned to a User.
 
 
 ### HTTP Request
@@ -314,7 +314,7 @@ Retrieves all trainings that have been assigned to a user.
 
 Parameter | Required | Description
 --------- | ------- | -----------
-ID | Yes | The ID of the user for whom you want to retrieve trainings
+ID | Yes | The ID of the User for whom you want to retrieve Trainings
 
 ## Assign a training to a User
 
@@ -352,7 +352,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_trai
   { "message": "Invalid survey code" }
 ```
 
-Assigns the specified training to a user.
+Assigns the specified Training to a User.
 
 
 ### HTTP Request
@@ -363,7 +363,7 @@ Assigns the specified training to a user.
 
 Parameter | Required | Description
 --------- | ------- | -----------
-ID | Yes | The ID of the user to whom the training will be assigned
+ID | Yes | The ID of the User to whom the Training will be assigned
 survey_code | No | The code for the Training that will be assigned
 send_email | No | Indicates whether an email is automatically sent to the Trainee (default is `false`)
 
@@ -417,7 +417,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_trai
   { "message": "Invalid survey code" }
 ```
 
-Resends the specified training to a user.
+Resends the specified Training to a User.
 
 
 ### HTTP Request
@@ -428,7 +428,7 @@ Resends the specified training to a user.
 
 Parameter | Required | Description
 --------- | ------- | -----------
-ID | Yes | The ID of the user to whom the training will be resent
+ID | Yes | The ID of the User to whom the Training will be resent
 survey_code | No | The code for the Training that will be resent
 
 
@@ -461,7 +461,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/trainings"
   }
 ```
 
-Retrieves all trainings that have been assigned to users in the organization.
+Retrieves all Trainings that have been assigned to Users in the Organization.
 
 
 ### HTTP Request
@@ -472,9 +472,9 @@ Retrieves all trainings that have been assigned to users in the organization.
 
 Parameter | Required | Description
 --------- | ------- | -----------
-page | 1 | The page of trainings that will be returned
-start_date |  | The start date for background check assignments. *(Format: mm/dd/yyyy)*
-end_date |  | The end date for background check assignments. *(Format: mm/dd/yyyy)*
+page | 1 | The page of Trainings that will be returned
+start_date |  | The start date for Background Check assignments *(Format: mm/dd/yyyy)*
+end_date |  | The end date for Background Check assignments *(Format: mm/dd/yyyy)*
 
 
 # Background Checks
@@ -549,7 +549,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/12
 }
 ```
 
-This endpoint retrieves a specific background check record.
+This endpoint retrieves a specific Background Check record.
 
 ### HTTP Request
 
@@ -559,7 +559,7 @@ This endpoint retrieves a specific background check record.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the background check to retrieve
+ID | The ID of the Background Check to retrieve
 
 ## Create a Background Check
 
@@ -594,7 +594,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
   }
 ```
 
-This endpoint creates a new background check.
+This endpoint creates a new Background Check.
 
 ### HTTP Request
 
@@ -604,24 +604,24 @@ This endpoint creates a new background check.
 
 Parameter | Required | Type | Description
 --------- | ----------- | ---------- | -----------
-user_id | Yes | integer | The ID of the user for whom the background check will be ordered
-level | No* | integer | The level of the background check being ordered
-custom_background_check_package_code | No* | string | The code of the custom background check package being requested
-quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out their details. If false, all the applicant's information is required to be submitted in the initial request
+user_id | Yes | integer | The ID of the User for whom the Background Check will be ordered
+level | No* | integer | The level of the Background Check being ordered
+custom_background_check_package_code | No* | string | The code of the custom Background Check package being requested
+quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out details. If false, all applicant information must be submitted in the initial request.
 first_name | No** | string | The first name of the applicant
 last_name | No** | string | The last name of the applicant
 address | No** | string | The street address of the applicant's residence
 city | No** | string | The city of the applicant's residence
 county | No** | string | The county of the applicant's residence
 state | No** | string | The two letter state code of the applicant's residence
-zip | No** | string | The zipcode of the applicant's residence
+zip | No** | string | The zip code of the applicant's residence
 ssn | No** | string | The Social Security Number of the applicant
 dob | No** | string format "MM/DD/YYYY" |  The applicant's date of birth
 driver_license | No*** | string | The applicant's drivers license number
-driver_license_state | No*** | The two letter code of the applicant's drivers license state
+driver_license_state | No*** | string | The two letter code of the applicant's drivers license state
 email | No** | string | The email address of the applicant
 user_type | No | string | ['employee', 'volunteer']
-child_serving | No | boolean | Designates whether the user is in a child-serving role
+child_serving | No | boolean | Designates whether the User is in a child-serving role
 salary_range | No | string | ['under_20k', '20k_25k', '25k_75k', '75k_plus']
 age_over_13 | No | boolean | Designates whether the applicant is over 13 years of age
 employee_type | No | string | ['current', 'prospective']
@@ -662,7 +662,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/12
   { "message": "Background Check not found" }
 ```
 
-This endpoint archives a background check.
+This endpoint archives a Background Check.
 
 ### HTTP Request
 
@@ -672,7 +672,7 @@ This endpoint archives a background check.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the background check to archive
+ID | The ID of the Background Check to archive
 
 ## Get Available Levels
 
@@ -756,7 +756,7 @@ Webhooks are triggered upon successful User completion of a Training and may be 
 
 If webhooks are enabled, we send an HTTP POST request to the URLs you specify when a Trainee completes a quiz.
 
-## Background checks
+## Background Checks
 
 ### Implementation
 
