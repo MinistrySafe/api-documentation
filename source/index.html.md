@@ -19,6 +19,12 @@ Welcome to the MinistrySafe and Abuse Prevention Systems API.
 
 You may use this API to assign Trainings, manage Trainings, Background Checks and deliver our content and quizzes in your own system.
 
+Contact support@ministrysafe.com for a sandbox account
+
+Developers console url for staging environment: <a href="https://staging.ministrysafe.com/developers" >https://staging.ministrysafe.com/developers</a>
+
+Developers console url for production environment: <a href="https://safetysystem.ministrysafe.com/developers" >https://safetysystem.ministrysafe.com/developers</a>
+
 
 # Authentication
 
