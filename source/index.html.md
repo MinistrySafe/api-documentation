@@ -52,7 +52,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
+curl "https://safetysystem.ministrysafe.com/api/v2/users"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -69,7 +69,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "score": 80,
       "complete_date": "2016-08-17T17:07:07.292Z",
       "user_type": "employee",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
+      "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
       "tags": [
           "Tag-1",
           "Tag-2",
@@ -85,7 +85,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
       "score": 100,
       "complete_date": "2016-08-03T01:59:32.622Z",
       "user_type": "volunteer",
-      "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3",
+      "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=jds95h2j4labhHH4klsd02n3",
       "tags": [
           "Tag-4",
           "Tag-5"
@@ -99,7 +99,7 @@ Retrieves a list of Users. Users will be returned up to 100 at a time. This endp
 
 ### HTTP Request
 
-`GET https://safetysystem.abusepreventionsystems.com/api/v2/users`
+`GET https://safetysystem.ministrysafe.com/api/v2/users`
 
 ### Query Parameters
 
@@ -114,7 +114,7 @@ tag | <blank> | Only Users having this Tag will be returned
 ## Get a User
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/2"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -130,7 +130,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
   "score": 80,
   "complete_date": "2016-08-17T17:07:07.292Z",
   "user_type": "employee",
-  "direct_login_url": "https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
+  "direct_login_url": "https://safetysystem.ministrysafe.com/trainings/quiz?t=jds95h2lslf92nl4klsd02n3",
   "tags": [
       "Tag-1",
       "Tag-2"
@@ -142,7 +142,7 @@ This endpoint retrieves a specific User.
 
 ### HTTP Request
 
-`GET https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
+`GET https://safetysystem.ministrysafe.com/api/v2/users/<ID>`
 
 ### URL Parameters
 
@@ -154,7 +154,7 @@ ID | The ID of the User to retrieve
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
+curl "https://safetysystem.ministrysafe.com/api/v2/users"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "user[first_name]=Tom&user[last_name]=Harrington&user[email]=test@example.com&user[external_id]=1234&tag_list=tag1,tag2,tag3"
@@ -188,7 +188,7 @@ This endpoint creates a new User.
 
 ### HTTP Request
 
-`POST https://safetysystem.abusepreventionsystems.com/api/v2/users`
+`POST https://safetysystem.ministrysafe.com/api/v2/users`
 
 ### User Attributes
 
@@ -205,7 +205,7 @@ external_id | No | As another option, you may assign a User an ID for use in int
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/1"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/1"
   -X PUT
   -H "Authorization: Token token=myapitoken"
   -d "user[first_name]=Tim"
@@ -243,7 +243,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/1"
 This endpoint updates a User.
 
 
-`PUT https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
+`PUT https://safetysystem.ministrysafe.com/api/v2/users/<ID>`
 
 ### User Attributes
 
@@ -257,7 +257,7 @@ tag_list | No | New User's Tag list
 ## Deactivate a User
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/2"
   -X DELETE
   -H "Authorization: Token token=myapitoken"
 ```
@@ -270,7 +270,7 @@ This endpoint deletes a specific User.
 
 ### HTTP Request
 
-`DELETE https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>`
+`DELETE https://safetysystem.ministrysafe.com/api/v2/users/<ID>`
 
 ### URL Parameters
 
@@ -284,7 +284,7 @@ ID | The ID of the User to delete
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/2/trainings"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -314,7 +314,7 @@ Retrieves all Trainings that have been assigned to a User.
 
 ### HTTP Request
 
-`GET https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>/trainings`
+`GET https://safetysystem.ministrysafe.com/api/v2/users/<ID>/trainings`
 
 ### Query Parameters
 
@@ -326,7 +326,7 @@ ID | Yes | The ID of the User for whom you want to retrieve Trainings
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/2/assign_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "survey_code=standard"
@@ -363,7 +363,7 @@ Assigns the specified Training to a User.
 
 ### HTTP Request
 
-`POST https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>/assign_training`
+`POST https://safetysystem.ministrysafe.com/api/v2/users/<ID>/assign_training`
 
 ### Query Parameters
 
@@ -397,7 +397,7 @@ _* This Training specifically includes new California legal requirements_
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"
+curl "https://safetysystem.ministrysafe.com/api/v2/users/2/resend_training"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "survey_code=standard"
@@ -428,7 +428,7 @@ Resends the specified Training to a User.
 
 ### HTTP Request
 
-`POST https://safetysystem.abusepreventionsystems.com/api/v2/users/<ID>/resend_training`
+`POST https://safetysystem.ministrysafe.com/api/v2/users/<ID>/resend_training`
 
 ### Query Parameters
 
@@ -442,7 +442,7 @@ survey_code | No | The code for the Training that will be resent
 
 
 ```shell
-curl "https://safetysystem.abusepreventionsystems.com/api/v2/trainings"
+curl "https://safetysystem.ministrysafe.com/api/v2/trainings"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -472,7 +472,7 @@ Retrieves all Trainings that have been assigned to Users in the Organization.
 
 ### HTTP Request
 
-`GET https://safetysystem.abusepreventionsystems.com/api/v2/trainings`
+`GET https://safetysystem.ministrysafe.com/api/v2/trainings`
 
 ### Query Parameters
 
@@ -489,7 +489,7 @@ end_date |  | The end date for Background Check assignments *(Format: mm/dd/yyyy
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
+curl "https://safetysystem.ministrysafe.com/api/v2/background_checks"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -523,7 +523,7 @@ Retrieves a list of Background Checks for your Organization. Background Checks w
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks`
+`GET https://safetysystem.ministrysafe.com/api/v2/background_checks`
 
 ### Query Parameters
 
@@ -537,7 +537,7 @@ end_date |  | The end date to filter Background Checks that were assigned on or 
 ## Get a Background Check
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"
+curl "https://safetysystem.ministrysafe.com/api/v2/background_checks/123"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -559,7 +559,7 @@ This endpoint retrieves a specific Background Check record.
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/<ID>`
+`GET https://safetysystem.ministrysafe.com/api/v2/background_checks/<ID>`
 
 ### URL Parameters
 
@@ -571,7 +571,7 @@ ID | The ID of the Background Check to retrieve
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
+curl "https://safetysystem.ministrysafe.com/api/v2/background_checks"
   -X POST
   -H "Authorization: Token token=myapitoken"
   -d "background_check[user_id]=123&background_check[quickapp]=true&background_check[level]=1"
@@ -604,7 +604,7 @@ This endpoint creates a new Background Check.
 
 ### HTTP Request
 
-`POST https://safetsystem.abusepreventionsystems.com/api/v2/background_checks`
+`POST https://safetysystem.ministrysafe.com/api/v2/background_checks`
 
 ### Background Check Attributes
 
@@ -645,7 +645,7 @@ _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"
+curl "https://safetysystem.ministrysafe.com/api/v2/background_checks/123/archive"
   -X PUT
   -H "Authorization: Token token=myapitoken"
 ```
@@ -674,7 +674,7 @@ This endpoint archives a Background Check.
 
 ### HTTP Request
 
-`PUT https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/<ID>/archive`
+`PUT https://safetysystem.ministrysafe.com/api/v2/background_checks/<ID>/archive`
 
 ### URL Parameters
 
@@ -686,7 +686,7 @@ ID | The ID of the Background Check to archive
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"
+curl "https://safetysystem.ministrysafe.com/api/v2/background_checks/available_levels"
   -X GET
   -H "Authorization: Token token=myapitoken"
 ```
@@ -701,7 +701,7 @@ Each Organization may have different Levels available to its Users. This endpoin
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels`
+`GET https://safetysystem.ministrysafe.com/api/v2/available_levels`
 
 
 # Tags
@@ -710,7 +710,7 @@ Each Organization may have different Levels available to its Users. This endpoin
 
 
 ```shell
-curl "https://safetsystem.abusepreventionsystems.com/api/v2/tags"
+curl "https://safetysystem.ministrysafe.com/api/v2/tags"
   -H "Authorization: Token token=myapitoken"
 ```
 
@@ -732,7 +732,7 @@ Retrieves a list of Tags related to your Organization. Tags will be returned up 
 
 ### HTTP Request
 
-`GET https://safetsystem.abusepreventionsystems.com/api/v2/tags`
+`GET https://safetysystem.ministrysafe.com/api/v2/tags`
 
 ### Query Parameters
 
@@ -756,7 +756,7 @@ page | 1 | The page of Tags that will be returned
     "score": 80,
     "complete_date": "2016-08-17T17:07:07.292Z",
     "survey_code": "standard",
-    "certificate_url": "https://safetysystem.abusepreventionsystems.com/path/to/certificate"
+    "certificate_url": "https://safetysystem.ministrysafe.com/path/to/certificate"
   }
 ```
 
