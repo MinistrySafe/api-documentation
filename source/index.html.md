@@ -17,7 +17,7 @@ search: true
 
 Welcome to the MinistrySafe and Abuse Prevention Systems API.
 
-You can use this API to assign trainings, manage trainings, and deliver our content and quizzes in your own system.
+You may use this API to assign Trainings, manage Trainings, Background Checks and deliver our content and quizzes in your own system.
 
 
 # Authentication
@@ -88,7 +88,7 @@ curl "https://safetysystem.abusepreventionsystems.com/api/v2/users"
   ]
 ```
 
-Retrieves a list of users. Users will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, 3, 4 etc.
+Retrieves a list of Users. Users will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Users, change the page param to 2, 3, 4 etc.
 
 
 ### HTTP Request
@@ -102,7 +102,7 @@ Parameter | Default | Description
 page | 1 | The page of users that will be returned
 external_id | <blank> | Will filter the returned users by external_id
 search | <blank> | Will filter the returned users by a keyword search
-tag | <blank> | String. Only users having this tag will be returned
+tag | <blank> | Only users having this tag will be returned
 
 
 ## Get a User
@@ -192,7 +192,7 @@ first_name | Yes | The first name of the user
 last_name | Yes | The last name of the user
 email | Yes | The user's email address
 user_type | No | ['employee', 'volunteer']
-external_id | No | You can optionally assign a user an ID for use in integration with your own system
+external_id | No | As another option, you may assign a User an ID for use in integration with your own system.
 
 
 ## Update a User
@@ -246,7 +246,7 @@ Parameter | Required |  Description
 first_name | No | New user's first name
 last_name | No | New user's last name
 email | No | New user's email
-tag_list | No | Nw user's tag list
+tag_list | No | New user's tag list
 
 ## Deactivate a User
 
@@ -364,25 +364,27 @@ Assigns the specified training to a user.
 Parameter | Required | Description
 --------- | ------- | -----------
 ID | Yes | The ID of the user to whom the training will be assigned
-survey_code | No | the code for the training that will be assigned
-send_email | No | indicates whether an email will be automatically sent to the trainee (default is `false`)
+survey_code | No | The code for the Training that will be assigned
+send_email | No | Indicates whether an email is automatically sent to the Trainee (default is `false`)
 
 ### Survey Types
 
 code | description
 --------- | -------
-`standard` | our standard 2021 Sexual Abuse Awareness Training
-`youth` | our Youth Sports Sexual Abuse Awareness Training
-`camp` | our Camp-Focused Sexual Abuse Awareness Training
-`spanish` | our Spanish Sexual Abuse Awareness Training
-`daycare` | our Daycare-Focused Sexual Abuse Awareness Training
-`education` | our Education-Focused Sexual Abuse Awareness Training
-`youth_ministry` | our Youth Ministry Sexual Abuse Awareness Training
-`skillful_screening` | our Skillful Screening Training
-`parent_training` | our Parent Training
-`california` | the training specifically including the new California legal requirements
-`peer_to_peer_training` | our Peer-to-Peer Sexual Abuse Training
-`harassment` | our Preventing Sexual Harassment Training
+`standard` | The most recent Sexual Abuse Awareness Training
+`youth` | Sexual Abuse Awareness Training - Youth Sports
+`camp` | Sexual Abuse Awareness Training - Camp
+`spanish` | Sexual Abuse Awareness Training - Spanish
+`daycare` | Sexual Abuse Awareness Training - Daycare
+`education` | Sexual Abuse Awareness Training - Education
+`youth_ministry` | Sexual Abuse Awareness Training - Youth Ministry
+`skillful_screening` | Skillful Screening Training
+`parent_training` | Parent/Guardian Training
+`california` | Sexual Abuse Awareness Training (CA)*
+`peer_to_peer_training` | Peer-to-Peer Sexual Abuse Training
+`harassment` | Preventing Sexual Harassment Training (for Supervisors)
+
+_* This Training specifically includes new California legal requirements_
 
 
 ## Resend a training
@@ -427,7 +429,7 @@ Resends the specified training to a user.
 Parameter | Required | Description
 --------- | ------- | -----------
 ID | Yes | The ID of the user to whom the training will be resent
-survey_code | No | the code for the training that will be resent
+survey_code | No | The code for the Training that will be resent
 
 
 ## Get All Trainings
@@ -510,7 +512,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"
   ]
 ```
 
-Retrieves a list of background checks for your organization. Background Checks will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the `page` param to 2, 3, 4 etc.
+Retrieves a list of Background Checks for your Organization. Background Checks will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Users, change the page param to 2, 3, 4, etc.
 
 
 ### HTTP Request
@@ -521,9 +523,9 @@ Retrieves a list of background checks for your organization. Background Checks w
 
 Parameter | Default | Description
 --------- | ------- | -----------
-page | 1 | the page of background_checks that will be returned
-start_date |  | The starting date to filter background checks that were assigned on or after
-end_date |  | The ending date to filter background checks that were assigned on or before
+page | 1 | The page of Background Checks that will be returned
+start_date |  | The start date to filter Background Checks that were assigned on or after (Format: mm/dd/yyyy)
+end_date |  | The end date to filter Background Checks that were assigned on or before (Format: mm/dd/yyyy)
 
 
 ## Get a Background Check
@@ -606,27 +608,27 @@ user_id | Yes | integer | The ID of the user for whom the background check will 
 level | No* | integer | The level of the background check being ordered
 custom_background_check_package_code | No* | string | The code of the custom background check package being requested
 quickapp | Yes | boolean | If true, an email will be sent to the applicant to fill out their details. If false, all the applicant's information is required to be submitted in the initial request
-first_name | No** | string | the first name of the applicant
-last_name | No** | string | the last name of the applicant
-address | No** | string | the street address of the applicant's residence
-city | No** | string | the city of the applicant's residence
-county | No** | string | the county of the applicant's residence
-state | No** | string | the two letter state code of the applicant's residence
-zip | No** | string | the zipcode of the applicant's residence
-ssn | No** | string | the Social Security Number of the applicant
+first_name | No** | string | The first name of the applicant
+last_name | No** | string | The last name of the applicant
+address | No** | string | The street address of the applicant's residence
+city | No** | string | The city of the applicant's residence
+county | No** | string | The county of the applicant's residence
+state | No** | string | The two letter state code of the applicant's residence
+zip | No** | string | The zipcode of the applicant's residence
+ssn | No** | string | The Social Security Number of the applicant
 dob | No** | string format "MM/DD/YYYY" |  The applicant's date of birth
-driver_license | No*** | string | the applicant's drivers license number
-driver_license_state | No*** | the two letter code of the applicant's drivers license state
-email | No** | string | the email address of the applicant
+driver_license | No*** | string | The applicant's drivers license number
+driver_license_state | No*** | The two letter code of the applicant's drivers license state
+email | No** | string | The email address of the applicant
 user_type | No | string | ['employee', 'volunteer']
 child_serving | No | boolean | Designates whether the user is in a child-serving role
 salary_range | No | string | ['under_20k', '20k_25k', '25k_75k', '75k_plus']
-age_over_13 | No | boolean | Whether the applicant is over 13 years of age
+age_over_13 | No | boolean | Designates whether the applicant is over 13 years of age
 employee_type | No | string | ['current', 'prospective']
 
 _* One of either `level` or `custom_background_check_package_code` are required_
 
-_** Required if not doing a quickapp (`quickapp`=`false`)_
+_** Required if not doing a QuickApp (`quickapp`=`false`)_
 
 _*** Required for levels 2, 4, 5, 6, 7, and some custom packages_
 
@@ -687,7 +689,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/av
   [1, 2, 3, 4, 5, 6, 7]
 ```
 
-Each organization could have different levels that are available to their users. This endpoint returns the background check levels that are available to order on a user.
+Each Organization may have different Levels available to its Users. This endpoint returns the Background Check Levels available to order on an Organization’s User.
 
 ### HTTP Request
 
@@ -717,7 +719,7 @@ curl "https://safetsystem.abusepreventionsystems.com/api/v2/tags"
   ]
 ```
 
-Retrieves a list of tags of your organization. Tags will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred tags, change the `page` param to 2, 3, 4 etc.
+Retrieves a list of Tags related to your Organization. Tags will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Tags, change the page param to 2, 3, 4, etc.
 
 
 ### HTTP Request
@@ -728,7 +730,7 @@ Retrieves a list of tags of your organization. Tags will be returned up to 100 a
 
 Parameter | Default | Description
 --------- | ------- | -----------
-page | 1 | the page of tags that will be returned
+page | 1 | The page of Tags that will be returned
 
 
 # Webhooks
@@ -750,9 +752,9 @@ page | 1 | the page of tags that will be returned
   }
 ```
 
-Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.
+Webhooks are triggered upon successful User completion of a Training and may be configured in your developer console.
 
-If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.
+If webhooks are enabled, we send an HTTP POST request to the URLs you specify when a Trainee completes a quiz.
 
 ## Background checks
 
@@ -771,6 +773,6 @@ If webhooks are enabled, when a trainee completes a quiz, we send a http POST re
   }
 ```
 
-Webhooks are triggered when the background check is ready to be reviewed, and can be configured in your developer console.
+Webhooks are triggered when the Background Check is ready to be reviewed and may be configured in your developer console.
 
-If webhooks are enabled, when a background check is ready, we send a http POST request to the URLs you choose to specify.
+If webhooks are enabled,  we send an HTTP POST request to the URLs you specify when a Background Check is ready for review.
