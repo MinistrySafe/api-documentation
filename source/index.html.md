@@ -631,6 +631,8 @@ child_serving | No | boolean | Designates whether the User is in a child-serving
 salary_range | No | string | ['under_20k', '20k_25k', '25k_75k', '75k_plus']
 age_over_13 | No | boolean | Designates whether the applicant is over 13 years of age
 employee_type | No | string | ['current', 'prospective']
+applicant_self_disclosed | No | boolean | Designates whether the applicant self discloses
+applicant_self_disclosed_notes | No | string | The applicant's notes if self disclosed
 
 _* One of either `level` or `custom_background_check_package_code` are required_
 
