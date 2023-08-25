@@ -296,7 +296,7 @@
                     <a href="#quizzes" class="toc-h2 toc-link" data-title="quizzes">Quizzes</a>
                   </li>
                   <li>
-                    <a href="#background-checks-2" class="toc-h2 toc-link" data-title="background-checks">Background checks</a>
+                    <a href="#background-checks-2" class="toc-h2 toc-link" data-title="background-checks">Background Checks</a>
                   </li>
               </ul>
           </li>
@@ -314,7 +314,13 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the MinistrySafe and Abuse Prevention Systems API.</p>
 
-<p>You can use this API to assign trainings, manage trainings, and deliver our content and quizzes in your own system.</p>
+<p>You may use this API to assign Trainings, manage Trainings, Background Checks and deliver our content and quizzes in your own system.</p>
+
+<p>Contact support@ministrysafe.com for a sandbox account</p>
+
+<p>Developers console url for staging environment: <a href="https://staging.abusepreventionsystems.com/developers" >https://staging.abusepreventionsystems.com/developers</a></p>
+
+<p>Developers console url for production environment: <a href="https://safetysystem.abusepreventionsystems.com/developers" >https://safetysystem.abusepreventionsystems.com/developers</a></p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -374,7 +380,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Retrieves a list of users. Users will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the <code>page</code> param to 2, 3, 4 etc.</p>
+<p>Retrieves a list of Users. Users will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Users, change the page param to 2, 3, 4 etc.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/users</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -388,22 +394,22 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>page</td>
 <td>1</td>
-<td>The page of users that will be returned</td>
+<td>The page of Users that will be returned</td>
 </tr>
 <tr>
 <td>external_id</td>
 <td><blank></td>
-<td>Will filter the returned users by external_id</td>
+<td>Will filter the returned Users by external_id</td>
 </tr>
 <tr>
 <td>search</td>
 <td><blank></td>
-<td>Will filter the returned users by a keyword search</td>
+<td>Will filter the returned Users by a keyword search</td>
 </tr>
 <tr>
 <td>tag</td>
 <td><blank></td>
-<td>String. Only users having this tag will be returned</td>
+<td>Only Users having this Tag will be returned</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-user'>Get a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2"</span>
@@ -428,7 +434,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific user.</p>
+<p>This endpoint retrieves a specific User.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -440,7 +446,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the user to retrieve</td>
+<td>The ID of the User to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='create-a-user'>Create a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users"</span>
@@ -458,7 +464,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
   </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span></code></pre>
@@ -470,7 +476,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You must provide a last name"</span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new user.</p>
+<p>This endpoint creates a new User.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://safetysystem.abusepreventionsystems.com/api/v2/users</code></p>
 <h3 id='user-attributes'>User Attributes</h3>
@@ -504,7 +510,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>external_id</td>
 <td>No</td>
-<td>You can optionally assign a user an ID for use in integration with your own system</td>
+<td>As another option, you may assign a User an ID for use in integration with your own system.</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-user'>Update a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/1"</span>
@@ -522,7 +528,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
   </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"Tag-1"</span><span class="p">,</span><span class="w">
@@ -537,7 +543,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You must provide a last name"</span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p>This endpoint updates a user.</p>
+<p>This endpoint updates a User.</p>
 
 <p><code>PUT https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;</code></p>
 <h3 id='user-attributes-2'>User Attributes</h3>
@@ -551,22 +557,22 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>first_name</td>
 <td>No</td>
-<td>New user&#39;s first name</td>
+<td>New User&#39;s first name</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>No</td>
-<td>New user&#39;s last name</td>
+<td>New User&#39;s last name</td>
 </tr>
 <tr>
 <td>email</td>
 <td>No</td>
-<td>New user&#39;s email</td>
+<td>New User&#39;s email</td>
 </tr>
 <tr>
 <td>tag_list</td>
 <td>No</td>
-<td>Nw user&#39;s tag list</td>
+<td>New User&#39;s Tag list</td>
 </tr>
 </tbody></table>
 <h2 id='deactivate-a-user'>Deactivate a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2"</span>
@@ -574,7 +580,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">No</span><span class="w"> </span><span class="err">Content</span><span class="w"> </span><span class="err">Body</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific user.</p>
+<p>This endpoint deletes a specific User.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -586,7 +592,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the user to delete</td>
+<td>The ID of the User to delete</td>
 </tr>
 </tbody></table>
 <h1 id='trainings'>Trainings</h1><h2 id='get-all-trainings-for-a-user'>Get All Trainings for a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/trainings"</span>
@@ -603,7 +609,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-30T21:42:58.675-06:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sexual Abuse Awareness Training (2021)"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://safetysystem.ministrysafe.com/trainings/4?print=true"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://safetysystem.abusepreventionsystems.com/trainings/4?print=true"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
         </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee-id"</span><span class="p">,</span><span class="w">
@@ -612,7 +618,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Retrieves all trainings that have been assigned to a user.</p>
+<p>Retrieves all Trainings that have been assigned to a User.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;/trainings</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
@@ -626,7 +632,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>ID</td>
 <td>Yes</td>
-<td>The ID of the user for whom you want to retrieve trainings</td>
+<td>The ID of the User for whom you want to retrieve Trainings</td>
 </tr>
 </tbody></table>
 <h2 id='assign-a-training-to-a-user'>Assign a training to a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/assign_training"</span>
@@ -644,7 +650,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
   </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
@@ -658,7 +664,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid survey code"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Assigns the specified training to a user.</p>
+<p>Assigns the specified Training to a User.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;/assign_training</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
@@ -672,17 +678,17 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>ID</td>
 <td>Yes</td>
-<td>The ID of the user to whom the training will be assigned</td>
+<td>The ID of the User to whom the Training will be assigned</td>
 </tr>
 <tr>
 <td>survey_code</td>
 <td>No</td>
-<td>the code for the training that will be assigned</td>
+<td>The code for the Training that will be assigned</td>
 </tr>
 <tr>
 <td>send_email</td>
 <td>No</td>
-<td>indicates whether an email will be automatically sent to the trainee (default is <code>false</code>)</td>
+<td>Indicates whether an email is automatically sent to the Trainee (default is <code>false</code>)</td>
 </tr>
 </tbody></table>
 <h3 id='survey-types'>Survey Types</h3>
@@ -694,53 +700,55 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td><code>standard</code></td>
-<td>our standard 2021 Sexual Abuse Awareness Training</td>
+<td>The most recent Sexual Abuse Awareness Training</td>
 </tr>
 <tr>
 <td><code>youth</code></td>
-<td>our Youth Sports Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Youth Sports</td>
 </tr>
 <tr>
 <td><code>camp</code></td>
-<td>our Camp-Focused Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Camp</td>
 </tr>
 <tr>
 <td><code>spanish</code></td>
-<td>our Spanish Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Spanish</td>
 </tr>
 <tr>
 <td><code>daycare</code></td>
-<td>our Daycare-Focused Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Daycare</td>
 </tr>
 <tr>
 <td><code>education</code></td>
-<td>our Education-Focused Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Education</td>
 </tr>
 <tr>
 <td><code>youth_ministry</code></td>
-<td>our Youth Ministry Sexual Abuse Awareness Training</td>
+<td>Sexual Abuse Awareness Training - Youth Ministry</td>
 </tr>
 <tr>
 <td><code>skillful_screening</code></td>
-<td>our Skillful Screening Training</td>
+<td>Skillful Screening Training</td>
 </tr>
 <tr>
 <td><code>parent_training</code></td>
-<td>our Parent Training</td>
+<td>Parent/Guardian Training</td>
 </tr>
 <tr>
 <td><code>california</code></td>
-<td>the training specifically including the new California legal requirements</td>
+<td>Sexual Abuse Awareness Training (CA)*</td>
 </tr>
 <tr>
 <td><code>peer_to_peer_training</code></td>
-<td>our Peer-to-Peer Sexual Abuse Training</td>
+<td>Peer-to-Peer Sexual Abuse Training</td>
 </tr>
 <tr>
 <td><code>harassment</code></td>
-<td>our Preventing Sexual Harassment Training</td>
+<td>Preventing Sexual Harassment Training (for Supervisors)</td>
 </tr>
 </tbody></table>
+
+<p><em>* This Training specifically includes new California legal requirements</em></p>
 <h2 id='resend-a-training'>Resend a training</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/users/2/resend_training"</span>
   -X POST
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
@@ -756,7 +764,7 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
   </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:07:07.292Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.ministrysafe.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"direct_login_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/trainings/quiz?t=7671cf713e382812b749dbed2aa52f438ffc815f278a6c41"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -764,7 +772,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid survey code"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Resends the specified training to a user.</p>
+<p>Resends the specified Training to a User.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://safetysystem.abusepreventionsystems.com/api/v2/users/&lt;ID&gt;/resend_training</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
@@ -778,12 +786,12 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>ID</td>
 <td>Yes</td>
-<td>The ID of the user to whom the training will be resent</td>
+<td>The ID of the User to whom the Training will be resent</td>
 </tr>
 <tr>
 <td>survey_code</td>
 <td>No</td>
-<td>the code for the training that will be resent</td>
+<td>The code for the Training that will be resent</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-trainings'>Get All Trainings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/trainings"</span>
@@ -800,7 +808,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-30T21:42:58.675-06:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sexual Abuse Awareness Training (2021)"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://safetysystem.ministrysafe.com/trainings/4?print=true"</span><span class="w">
+    </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://safetysystem.abusepreventionsystems.com/trainings/4?print=true"</span><span class="w">
     </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
       </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"employee-id"</span><span class="p">,</span><span class="w">
@@ -809,7 +817,7 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Retrieves all trainings that have been assigned to users in the organization.</p>
+<p>Retrieves all Trainings that have been assigned to Users in the Organization.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/trainings</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
@@ -823,20 +831,20 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>page</td>
 <td>1</td>
-<td>The page of trainings that will be returned</td>
+<td>The page of Trainings that will be returned</td>
 </tr>
 <tr>
 <td>start_date</td>
 <td></td>
-<td>The starting date for training assignments. <em>(Format: mm/dd/yyyy)</em></td>
+<td>The start date for Background Check assignments <em>(Format: mm/dd/yyyy)</em></td>
 </tr>
 <tr>
 <td>end_date</td>
 <td></td>
-<td>The end date for training assignments. <em>(Format: mm/dd/yyyy)</em></td>
+<td>The end date for Background Check assignments <em>(Format: mm/dd/yyyy)</em></td>
 </tr>
 </tbody></table>
-<h1 id='background-checks'>Background Checks</h1><h2 id='get-all-background-checks'>Get All Background Checks</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"</span>
+<h1 id='background-checks'>Background Checks</h1><h2 id='get-all-background-checks'>Get All Background Checks</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/background_checks"</span>
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
 <blockquote>
@@ -863,9 +871,9 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Retrieves a list of background checks for your organization. Background Checks will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred users, change the <code>page</code> param to 2, 3, 4 etc.</p>
+<p>Retrieves a list of Background Checks for your Organization. Background Checks will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Users, change the page param to 2, 3, 4, etc.</p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks</code></p>
+<p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/background_checks</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -877,20 +885,20 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>page</td>
 <td>1</td>
-<td>the page of background_checks that will be returned</td>
+<td>The page of Background Checks that will be returned</td>
 </tr>
 <tr>
 <td>start_date</td>
 <td></td>
-<td>The start date for background check assignments. <em>(Format: mm/dd/yyyy)</em></td>
+<td>The start date to filter Background Checks that were assigned on or after (Format: mm/dd/yyyy)</td>
 </tr>
 <tr>
 <td>end_date</td>
 <td></td>
-<td>The end date for background check assignments. <em>(Format: mm/dd/yyyy)</em></td>
+<td>The end date to filter Background Checks that were assigned on or before (Format: mm/dd/yyyy)</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-background-check'>Get a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123"</span>
+<h2 id='get-a-background-check'>Get a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/background_checks/123"</span>
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
 <blockquote>
@@ -906,9 +914,9 @@ You must replace <code>myapitoken</code> with your actual API key.
   </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific background check record.</p>
+<p>This endpoint retrieves a specific Background Check record.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
-<p><code>GET https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/&lt;ID&gt;</code></p>
+<p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/background_checks/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -918,10 +926,10 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the background check to retrieve</td>
+<td>The ID of the Background Check to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-background-check'>Create a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks"</span>
+<h2 id='create-a-background-check'>Create a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/background_checks"</span>
   -X POST
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
   -d <span class="s2">"background_check[user_id]=123&amp;background_check[quickapp]=true&amp;background_check[level]=1"</span>
@@ -947,9 +955,9 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You must provide a last name"</span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new background check.</p>
+<p>This endpoint creates a new Background Check.</p>
 <h3 id='http-request-12'>HTTP Request</h3>
-<p><code>POST https://safetsystem.abusepreventionsystems.com/api/v2/background_checks</code></p>
+<p><code>POST https://safetysystem.abusepreventionsystems.com/api/v2/background_checks</code></p>
 <h3 id='background-check-attributes'>Background Check Attributes</h3>
 <table><thead>
 <tr>
@@ -963,73 +971,73 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>user_id</td>
 <td>Yes</td>
 <td>integer</td>
-<td>The ID of the user for whom the background check will be ordered</td>
+<td>The ID of the User for whom the Background Check will be ordered</td>
 </tr>
 <tr>
 <td>level</td>
 <td>No*</td>
 <td>integer</td>
-<td>The level of the background check being ordered</td>
+<td>The level of the Background Check being ordered</td>
 </tr>
 <tr>
 <td>custom_background_check_package_code</td>
 <td>No*</td>
 <td>string</td>
-<td>The code of the custom background check package being requested</td>
+<td>The code of the custom Background Check package being requested</td>
 </tr>
 <tr>
 <td>quickapp</td>
 <td>Yes</td>
 <td>boolean</td>
-<td>If true, an email will be sent to the applicant to fill out their details. If false, all the applicant&#39;s information is required to be submitted in the initial request</td>
+<td>If true, an email will be sent to the applicant to fill out details. If false, all applicant information must be submitted in the initial request.</td>
 </tr>
 <tr>
 <td>first_name</td>
 <td>No**</td>
 <td>string</td>
-<td>the first name of the applicant</td>
+<td>The first name of the applicant</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>No**</td>
 <td>string</td>
-<td>the last name of the applicant</td>
+<td>The last name of the applicant</td>
 </tr>
 <tr>
 <td>address</td>
 <td>No**</td>
 <td>string</td>
-<td>the street address of the applicant&#39;s residence</td>
+<td>The street address of the applicant&#39;s residence</td>
 </tr>
 <tr>
 <td>city</td>
 <td>No**</td>
 <td>string</td>
-<td>the city of the applicant&#39;s residence</td>
+<td>The city of the applicant&#39;s residence</td>
 </tr>
 <tr>
 <td>county</td>
 <td>No**</td>
 <td>string</td>
-<td>the county of the applicant&#39;s residence</td>
+<td>The county of the applicant&#39;s residence</td>
 </tr>
 <tr>
 <td>state</td>
 <td>No**</td>
 <td>string</td>
-<td>the two letter state code of the applicant&#39;s residence</td>
+<td>The two letter state code of the applicant&#39;s residence</td>
 </tr>
 <tr>
 <td>zip</td>
 <td>No**</td>
 <td>string</td>
-<td>the zipcode of the applicant&#39;s residence</td>
+<td>The zip code of the applicant&#39;s residence</td>
 </tr>
 <tr>
 <td>ssn</td>
 <td>No**</td>
 <td>string</td>
-<td>the Social Security Number of the applicant</td>
+<td>The Social Security Number of the applicant</td>
 </tr>
 <tr>
 <td>dob</td>
@@ -1041,19 +1049,19 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>driver_license</td>
 <td>No***</td>
 <td>string</td>
-<td>the applicant&#39;s drivers license number</td>
+<td>The applicant&#39;s drivers license number</td>
 </tr>
 <tr>
 <td>driver_license_state</td>
 <td>No***</td>
-<td>the two letter code of the applicant&#39;s drivers license state</td>
-<td></td>
+<td>string</td>
+<td>The two letter code of the applicant&#39;s drivers license state</td>
 </tr>
 <tr>
 <td>email</td>
 <td>No**</td>
 <td>string</td>
-<td>the email address of the applicant</td>
+<td>The email address of the applicant</td>
 </tr>
 <tr>
 <td>user_type</td>
@@ -1065,7 +1073,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>child_serving</td>
 <td>No</td>
 <td>boolean</td>
-<td>Designates whether the user is in a child-serving role</td>
+<td>Designates whether the User is in a child-serving role</td>
 </tr>
 <tr>
 <td>salary_range</td>
@@ -1077,7 +1085,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>age_over_13</td>
 <td>No</td>
 <td>boolean</td>
-<td>Whether the applicant is over 13 years of age</td>
+<td>Designates whether the applicant is over 13 years of age</td>
 </tr>
 <tr>
 <td>employee_type</td>
@@ -1085,14 +1093,26 @@ You must replace <code>myapitoken</code> with your actual API key.
 <td>string</td>
 <td>[&#39;current&#39;, &#39;prospective&#39;]</td>
 </tr>
+<tr>
+<td>applicant_self_disclosed</td>
+<td>No</td>
+<td>boolean</td>
+<td>Designates whether the applicant self discloses</td>
+</tr>
+<tr>
+<td>applicant_self_disclosed_notes</td>
+<td>No</td>
+<td>string</td>
+<td>The applicant&#39;s notes if self disclosed</td>
+</tr>
 </tbody></table>
 
 <p><em>* One of either <code>level</code> or <code>custom_background_check_package_code</code> are required</em></p>
 
-<p><em>** Required if not doing a quickapp (<code>quickapp</code>=<code>false</code>)</em></p>
+<p><em>** Required if not doing a QuickApp (<code>quickapp</code>=<code>false</code>)</em></p>
 
 <p><em>*** Required for levels 2, 4, 5, 6, 7, and some custom packages</em></p>
-<h2 id='archive-a-background-check'>Archive a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"</span>
+<h2 id='archive-a-background-check'>Archive a Background Check</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/background_checks/123/archive"</span>
   -X PUT
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
@@ -1114,9 +1134,9 @@ You must replace <code>myapitoken</code> with your actual API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background Check not found"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint archives a background check.</p>
+<p>This endpoint archives a Background Check.</p>
 <h3 id='http-request-13'>HTTP Request</h3>
-<p><code>PUT https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/&lt;ID&gt;/archive</code></p>
+<p><code>PUT https://safetysystem.abusepreventionsystems.com/api/v2/background_checks/&lt;ID&gt;/archive</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1126,10 +1146,10 @@ You must replace <code>myapitoken</code> with your actual API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the background check to archive</td>
+<td>The ID of the Background Check to archive</td>
 </tr>
 </tbody></table>
-<h2 id='get-available-levels'>Get Available Levels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetsystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"</span>
+<h2 id='get-available-levels'>Get Available Levels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/background_checks/available_levels"</span>
   -X GET
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
@@ -1138,10 +1158,10 @@ You must replace <code>myapitoken</code> with your actual API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Each organization could have different levels that are available to their users. This endpoint returns the background check levels that are available to order on a user.</p>
+<p>Each Organization may have different Levels available to its Users. This endpoint returns the Background Check Levels available to order on an Organization’s User.</p>
 <h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET https://safetsystem.abusepreventionsystems.com/api/v2/available_levels</code></p>
-<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.ministrysafe.com/api/v2/tags"</span>
+<p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/available_levels</code></p>
+<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://safetysystem.abusepreventionsystems.com/api/v2/tags"</span>
   -H <span class="s2">"Authorization: Token token=myapitoken"</span>
 </code></pre>
 <blockquote>
@@ -1156,9 +1176,9 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Retrieves a list of tags of your organization. Tags will be returned up to 100 at a time. This endpoint supports paging. The default page is 1. To retrieve the next hundred tags, change the <code>page</code> param to 2, 3, 4 etc.</p>
+<p>Retrieves a list of Tags related to your Organization. Tags will be returned up to 100 at a time. This endpoint supports paging, and the default page is 1. To retrieve the next hundred Tags, change the page param to 2, 3, 4, etc.</p>
 <h3 id='http-request-15'>HTTP Request</h3>
-<p><code>GET https://safetysystem.ministrysafe.com/api/v2/tags</code></p>
+<p><code>GET https://safetysystem.abusepreventionsystems.com/api/v2/tags</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1170,7 +1190,7 @@ You must replace <code>myapitoken</code> with your actual API key.
 <tr>
 <td>page</td>
 <td>1</td>
-<td>the page of tags that will be returned</td>
+<td>The page of Tags that will be returned</td>
 </tr>
 </tbody></table>
 <h1 id='webhooks'>Webhooks</h1><h2 id='quizzes'>Quizzes</h2><h3 id='implementation'>Implementation</h3>
@@ -1186,10 +1206,10 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"certificate_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://safetysystem.abusepreventionsystems.com/path/to/certificate"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Webhooks are triggered upon successful completion of a training by a user, and can be configured in your developer console.</p>
+<p>Webhooks are triggered upon successful User completion of a Training and may be configured in your developer console.</p>
 
-<p>If webhooks are enabled, when a trainee completes a quiz, we send a http POST request to the URLs you choose to specify.</p>
-<h2 id='background-checks-2'>Background checks</h2><h3 id='implementation-2'>Implementation</h3>
+<p>If webhooks are enabled, we send an HTTP POST request to the URLs you specify when a Trainee completes a quiz.</p>
+<h2 id='background-checks-2'>Background Checks</h2><h3 id='implementation-2'>Implementation</h3>
 <blockquote>
 <p>The webhook posts a JSON body structured like this:</p>
 </blockquote>
@@ -1198,13 +1218,13 @@ You must replace <code>myapitoken</code> with your actual API key.
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@email.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://reports.ministrysafe.com/send/interchangeview/?parameters=values"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://reports.abusepreventionsystems.com/send/interchangeview/?parameters=values"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"complete_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-30T10:35:21.548Z"</span><span class="p">,</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Webhooks are triggered when the background check is ready to be reviewed, and can be configured in your developer console.</p>
+<p>Webhooks are triggered when the Background Check is ready to be reviewed and may be configured in your developer console.</p>
 
-<p>If webhooks are enabled, when a background check is ready, we send a http POST request to the URLs you choose to specify.</p>
+<p>If webhooks are enabled,  we send an HTTP POST request to the URLs you specify when a Background Check is ready for review.</p>
 <h1 id='errors'>Errors</h1>
 <p>The API uses the following error codes:</p>
 
