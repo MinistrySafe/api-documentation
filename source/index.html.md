@@ -19,7 +19,7 @@ Welcome to the MinistrySafe and Abuse Prevention Systems API.
 
 You may use this API to assign Trainings, manage Trainings, Background Checks and deliver our content and quizzes in your own system.
 
-Contact support@ministrysafe.com for a sandbox account
+Contact <a href="mailto:support@MinistrySafe.com" >support@MinistrySafe.com</a> for a sandbox account
 
 Developers console url for staging environment: <a href="https://staging.ministrysafe.com/developers" >https://staging.ministrysafe.com/developers</a>
 
@@ -194,9 +194,9 @@ This endpoint creates a new User.
 
 Parameter | Required |  Description
 --------- | ----------- | ----------
-first_name | Yes | The first name of the user
-last_name | Yes | The last name of the user
-email | Yes | The user's email address
+first_name | Yes | The first name of the User
+last_name | Yes | The last name of the User
+email | Yes | The User's email address
 user_type | No | ['employee', 'volunteer']
 external_id | No | As another option, you may assign a User an ID for use in integration with your own system.
 
@@ -322,7 +322,7 @@ Parameter | Required | Description
 --------- | ------- | -----------
 ID | Yes | The ID of the User for whom you want to retrieve Trainings
 
-## Assign a training to a User
+## Assign a Training to a User
 
 
 ```shell
@@ -393,7 +393,7 @@ code | description
 _* This Training specifically includes new California legal requirements_
 
 
-## Resend a training
+## Resend a Training
 
 
 ```shell
